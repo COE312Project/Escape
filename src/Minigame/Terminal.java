@@ -11,7 +11,12 @@ public class Terminal {
 		Thread.sleep(1500);
 		System.out.println("Surveillance systems offline.");
 	}
-	public static void main(String[] args) throws InterruptedException 
+	public static void main(String[] args) throws InterruptedException
+	{
+		warden();
+	}
+
+	public static void warden()  throws InterruptedException
 	{
 		Scanner cin = new Scanner(System.in);
 		String files = "README.txt    maintenance.sh    restore.sh";
@@ -33,12 +38,12 @@ public class Terminal {
 				case "rm restore.sh": 
 					System.out.println("File deleted."); files = files.split("    ")[0] + "    "+ files.split("    ")[1]; break;
 				case "exit": 
-					System.out.println(""); break;
+					System.out.println(""); return;
 				default:
 					System.out.println(cmd+": command not found");
 			}
 
 		}
 	}
-
+	
 }
