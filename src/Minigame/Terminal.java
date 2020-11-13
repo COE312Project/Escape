@@ -1,9 +1,10 @@
 package Minigame;
 
+
 import java.util.Scanner;
 
 public class Terminal {
-//test
+
 	public static void maintenance() throws InterruptedException {
 		System.out.println("Starting maintenance..."); 
 		Thread.sleep(1500); 
