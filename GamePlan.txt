@@ -1,0 +1,56 @@
+Background clock:   1min = 1hr
+                    Must return to cell at 19:00 everyday (if guard catches, game over) (get warning at 18:00)
+                    Can go to cell and sleep to fwd to next day
+                    Hunger/Thirst % increases, 10%/min, dies/game over at 100%, eating resets it to 0% (gets warning at 70%)
+                    Guard patrol times/pattern
+
+Player wakes up in a prison cell. Looks around, sees barred window, sink, mirror, bed and locked door.
+Goes back to sleep. Wakes up, its morning (8:00).
+Can go to cafeteria:    Get food in inventory (food is available from 8:00-10:00 and 14:00-16:00)
+                        Other NPCs eating, can talk but theyll be rude
+
+Can go to yard: Yard has basketball court where prisoners are playing
+                You can try freethrows minigame with sensors
+                Construction in the corner
+                Bleachers on the side, some prisoners sitting there
+                Can talk to them, only BNPC will talk back, everyone else will be angry/tell you to go away
+                BNPC has been there a long time, knows a lot
+
+Can go to wardens office:   Cannot enter, guards tell you to go away
+Corridor D has too many guards, theyll tell you to go away
+
+Once you have made friends with the NPC, he tries to give you something, guards see it and confines him to his cell permanently.
+He then gives you tips by knocking on your shared wall (morse code: .... . .-.. .-.. --- / - .... . .-. .)
+He tells you that:  You have to find a way to leave cell at night.
+                    Warden's office has supplies, need them for picking cell lock but he wont leave office.
+                    Also need to disable cameras in office using the computer
+
+Create commotion in cafeteria by throwing food (sensor action) at someone. They throw back, sensor quicktime to duck and evade.
+This causes a fight, warden will leave office for 2hrs (2 min)
+At this time, sneak in to office and get paperclips and pen.
+Hack camera systems by accessing the computer terminal - bash emulator (list files, run maintenance script and remove the restore script)
+If you stay in office over 2mins, warden returns and you're caught
+
+Using paperclip and pen, pick lock at night - sensor minigame, has to move in specified direction n times (raking etc)
+If cameras are not disabled (or restore script was not removed), you'll get caught, if you leave cell after 19:00
+
+In yard you have seen construction crew using some tools, digging, but cannot go near during day since guards are watching.
+After 19:00, yard is locked, one guard has the key.
+
+Pick cell lock at night, observe the guard patroling corridor A, sneak up behind and pickpocket him - sensor minigame, must rotate phone n times slowly (keep abs(gyro) < 1)
+After getting yard key, go to yard, get hacksaw and go back to room
+While going back to room, guard catches you unexpectedly in corridor C - quick time sensor event, has 3 sec to make slash action to attack guard
+Can hide body by throwing into the construction pit in yard. If not, discovered in 1 min, full lockdown, game over
+While going back to your cell, another inmate in his cell sees you: asks you to open his cell
+                                                                    you can choose to either help him or ignore:    help: you pick his lock and he runs out
+                                                                                                                    ignore: he's angry
+Go back to room with hacksaw
+Start sawing the bars on the window - sensor minigame, repeated back and forth movement
+After bars are broken, can jump out but height is too much and you'll die (give warning first)
+Use bedsheets as rope to climb down
+
+Now outside prison building, surrounded by high walls
+Suddenly, 3 guards ambush you:  series of quicktime events, if you miss any, you are caught
+                                if you had helped the inmate:   after subduing 1 guard, he arrives to help you
+Walk around until you see sewer manhole.
+ESCAPE
