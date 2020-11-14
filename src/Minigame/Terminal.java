@@ -12,11 +12,7 @@ public class Terminal {
 		Thread.sleep(1500);
 		System.out.println("Surveillance systems offline.");
 	}
-	public static void main(String[] args) throws InterruptedException
-	{
-		warden();
-	}
-
+	
 	public static void warden()  throws InterruptedException
 	{
 		Scanner cin = new Scanner(System.in);
