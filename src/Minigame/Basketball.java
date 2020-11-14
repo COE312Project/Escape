@@ -22,12 +22,6 @@ public class Basketball
 			else
 				System.out.println("nah");
 		}
-	}
-	
-	
-	public static void main(String[] args) {
-		(new Basketball("192.168.0.135",23232)).play();
-	}
-	
+	}	
 	
 }
