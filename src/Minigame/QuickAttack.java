@@ -8,13 +8,13 @@ public class QuickAttack {
 	
 	TCP_Client tcp;
 	Watch w;
-	QuickAttack(String ip, int port)
+	public QuickAttack(String ip, int port)
 	{
 		this.tcp = new TCP_Client(ip, port);
 		this.w = new Watch();
 	}
 	
-	void attack()
+	public void attack()
 	{
 		this.w.t.start();
 		while(true)
@@ -25,15 +25,10 @@ public class QuickAttack {
 			if(Math.abs(currAcc.x) > 15 || Math.abs(currAcc.y) > 15 || Math.abs(currAcc.z) > 15)
 			{
 				System.out.println("\nPikachu performed Quick Attack!\nIt was super effective!");
+				w.t.interrupt();
 				return;
 			}
 		}
 	}
 	
-	public static void main(String[] args)
-	{
-		(new QuickAttack("192.168.0.135",23232)).attack();
-		System.exit(0);
-	}
-
 }

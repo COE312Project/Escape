@@ -12,20 +12,20 @@ public class Watch implements java.lang.Runnable {
 
 	@Override
 	public void run() {
-		try {
-			this.runTimer();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		this.runTimer();
 	}
 	
-	public void runTimer() throws InterruptedException {
-		System.out.println("You have ");
+	public void runTimer() {
+		System.out.println("\nYou have ");
 		while (i > 0)
 		{
 			System.out.print(i+"...");
 			i--;
-			Thread.sleep(1000L);
+			try {
+				Thread.sleep(1000L);
+			} catch (InterruptedException e) {
+				return;
+			}
 		}
 		System.out.println("You were caught!\n----------GAME OVER----------");
 		System.exit(0);
