@@ -11,7 +11,7 @@ public class QuickAttack {
 	public QuickAttack(String ip, int port)
 	{
 		this.tcp = new TCP_Client(ip, port);
-		this.w = new Watch();
+		this.w = new Watch(3);
 	}
 	
 	public void attack()
@@ -19,7 +19,6 @@ public class QuickAttack {
 		this.w.t.start();
 		while(true)
 		{
-			//System.out.println("reached here");
 			coord currAcc = this.tcp.accel;
 			System.out.print("");
 			if(Math.abs(currAcc.x) > 15 || Math.abs(currAcc.y) > 15 || Math.abs(currAcc.z) > 15)

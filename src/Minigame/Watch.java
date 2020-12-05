@@ -2,20 +2,20 @@ package Minigame;
 
 public class Watch implements java.lang.Runnable {
 
-	int i;
+	int secs;
 	Thread t;
 
-	Watch() { 
-		i = 3;
-		t = new Thread(this);
+	Watch(int i) { 
+		this.secs = i;
+		this.t = new Thread(this);
 	}
 
 	@Override
 	public void run() {
-		this.runTimer();
+		this.runTimer(this.secs);
 	}
 	
-	public void runTimer() {
+	public void runTimer(int i) {
 		System.out.println("\nYou have ");
 		while (i > 0)
 		{
