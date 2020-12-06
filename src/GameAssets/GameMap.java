@@ -2,6 +2,7 @@ package GameAssets;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 
 public class GameMap {
@@ -72,7 +73,7 @@ public class GameMap {
 
 
 	public void printMap() {
-		String newMap = this.map.substring(0,curLoc) + '😉' + this.map.substring(curLoc + 1);
+		String newMap = this.map.substring(0,curLoc) + "😉" + this.map.substring(curLoc + 2);
 		System.out.println(newMap); // keep the original map intact, otherwise we've to remove the previous X
 
 
@@ -91,7 +92,7 @@ public class GameMap {
 	}
 
 	// Uncomment the following code to test it (import scanner)
-	/*
+	
 	public static void main(String[] args)  {
 
 		Scanner cin = new Scanner(System.in);
@@ -101,6 +102,6 @@ public class GameMap {
 			m.printMap();
 		}
 	}
-	*/
+	
 }
 
