@@ -2,7 +2,6 @@ package GameAssets;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 
 public class GameMap {
@@ -92,7 +91,7 @@ public class GameMap {
 	}
 
 	// Uncomment the following code to test it (import scanner)
-	
+	/*
 	public static void main(String[] args)  {
 
 		Scanner cin = new Scanner(System.in);
@@ -102,6 +101,6 @@ public class GameMap {
 			m.printMap();
 		}
 	}
-	
+	*/
 }
 
