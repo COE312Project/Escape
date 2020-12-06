@@ -72,7 +72,7 @@ public class GameMap {
 
 
 	public void printMap() {
-		String newMap = this.map.substring(0,curLoc) + 'X' + this.map.substring(curLoc + 1);
+		String newMap = this.map.substring(0,curLoc) + '😉' + this.map.substring(curLoc + 1);
 		System.out.println(newMap); // keep the original map intact, otherwise we've to remove the previous X
 
 
