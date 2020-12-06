@@ -40,7 +40,7 @@ public class GameMap {
 					"▓   █                                                                                  █   ▓\r\n" + 
 					"▓   █                                                                                  █   ▓\r\n" + 
 					"▓   █                                                                                  █   ▓\r\n" + 
-					"▓   █████████████████████████████████████████≡≡≡≡≡≡█████████████████████████████████████   ▓\r\n" + 
+					"▓   ████████████████████████████████████████≡≡≡|≡≡≡█████████████████████████████████████   ▓\r\n" + 
 					"▓                                                                                          ▓\r\n" + 
 					"▓C                                                                                        C▓\r\n" + 
 					"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓";
@@ -91,7 +91,7 @@ public class GameMap {
 	}
 
 	// Uncomment the following code to test it (import scanner)
-	/* 
+	/*
 	public static void main(String[] args)  {
 
 		Scanner cin = new Scanner(System.in);
@@ -101,6 +101,6 @@ public class GameMap {
 			m.printMap();
 		}
 	}
-	 */	
+	*/
 }
 
