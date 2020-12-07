@@ -26,8 +26,8 @@ public class Player implements Runnable
 
         // Wont hear the sound if you dont sleep, its playing in the background
         // and because it is sleeping, I thought I'll make it a separate thread
-        Thread.sleep((clip.getMicrosecondLength()/1000) + 1500); // extra one and half second coz that much is getting clipped if we do close()
-        clip.close(); //need to do close this file so next file can be opened later
+        Thread.sleep((clip.getMicrosecondLength()/1000) + 1500); // extra one and half second coz that much is getting clipped when we do close() idk why
+        clip.close(); //closes this file so next file can be opened later
     }
 
     public void run()
@@ -45,7 +45,8 @@ public class Player implements Runnable
         pp.play(fileName);
 
         // For playing another file,
-        // need to change Player.fileName
+        // just call play again
+        // second one will only play after first one completes
     
         pp.play("pacman_intro");
     }
