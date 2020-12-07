@@ -7,6 +7,7 @@ public class Location
     String name;
 
     ArrayList<Guard> guards;
+    ArrayList<NPC> NPCs;
     ArrayList<Item> items;
 
     // Uncomment the following code and the imports to test it
