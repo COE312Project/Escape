@@ -1,16 +1,15 @@
-//import java.util.Scanner;
+// import java.util.Scanner;
 
-//import GameAssets.GameMap;
+// import GameAssets.GameMap;
 
-public class Location
-{
+public class Location {
     String name;
 
     ArrayList<Guard> guards;
     ArrayList<NPC> NPCs;
     ArrayList<Item> items;
 
-    // Uncomment the following code and the imports to test it
+    //Uncomment the following code and the imports to test it
 	/*
     public static void main(String[] args)
     {
