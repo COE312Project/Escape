@@ -1,14 +1,16 @@
+ package Locations;
+
  import java.util.Scanner;
  import java.util.ArrayList;
 
  import GameAssets.GameMap;
 
  public class Location {
-     String name;
+     public String name;
 
-     ArrayList<Guard> guards;
-     ArrayList<NPC> NPCs;
-     ArrayList<Item> items;
+     public ArrayList<Outside.Guard> guards;
+     public ArrayList<Outside.NPC> NPCs;
+     public ArrayList<Outside.Item> items;
 
     //Uncomment the following code and the imports to test it
 	

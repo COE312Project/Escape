@@ -1,8 +1,9 @@
+package Outside;
 
-public class Guard implements Runnable {
+public class Guard implements Runnable, NPC{
 	
-	Location loc;
-	Location PlayerLoc;
+	Locations.Location loc;
+	Locations.Location PlayerLoc;
 	Thread T;
 	String name;
 	
@@ -12,7 +13,6 @@ public class Guard implements Runnable {
 	
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		
 		while(true) {
 			synchronized(this.loc) {

@@ -1,3 +1,4 @@
+package Outside;
 
 public interface State {
 	

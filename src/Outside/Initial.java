@@ -1,17 +1,17 @@
+package Outside;
 
 public class Initial implements State {
 	
-	CorridorALeft al;
-	CorridorARight ar;
-	CorridorBUp bu;
-	CorridorBDown bd;
-	CorridorCUp cu;
-	CorridorCDown cd;
+	Locations.CorridorALeft al;
+	Locations.CorridorARight ar;
+	Locations.CorridorBUp bu;
+	Locations.CorridorBDown bd;
+	Locations.CorridorCUp cu;
+	Locations.CorridorCDown cd;
 	Guard g1,g2,g3;
 	boolean aleft,bUp,cUp;
 
 	public void prev(Context context) {
-		// TODO Auto-generated method stub
 		
 		al.guards.add(g1);
 		bu.guards.add(g2);
@@ -24,7 +24,6 @@ public class Initial implements State {
 	}
 
 	public void next(Context context) {
-		// TODO Auto-generated method stub
 		
 		ar.guards.add(g1);
 		al.guards.remove(0);
@@ -39,7 +38,6 @@ public class Initial implements State {
 	}
 
 	public void printStatus() {
-		// TODO Auto-generated method stub
 		
 		String status1,status2, status3;
 		
