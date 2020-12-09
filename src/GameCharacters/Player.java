@@ -14,6 +14,8 @@ public class Player extends Prisoner implements Runnable
     	while(true) {
     		if(this.time == 18)
     			System.out.println("It's 6:00 pm! You have 1 minute to return to your cell.");
+    		else
+    			System.out.print("");
     	}
     }
 }
