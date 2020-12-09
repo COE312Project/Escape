@@ -10,5 +10,6 @@ public class Yard extends Location{
 		this.prisoners = p;
 		this.guards = g;
 		this.items.add(new Objects.Hacksaw());
+		this.items.add(new Objects.Basketball());
 	}
 }

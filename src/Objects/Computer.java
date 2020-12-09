@@ -8,7 +8,7 @@ public class Computer extends Item{
 	}
 
 	
-	public void use() {
+	public void use(String verb) {
 		try {
 			this.tm.login();
 			

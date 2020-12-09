@@ -8,7 +8,7 @@ public class Hacksaw extends Item {
 		super("hacksaw");
 	}
 	
-	public void use() {
+	public void use(String verb) {
 		try {
 			this.cwb.cut();
 			
