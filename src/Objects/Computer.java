@@ -12,7 +12,7 @@ public class Computer extends Item{
 		try {
 			this.tm.login();
 			
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 
 			e.printStackTrace();
 		}

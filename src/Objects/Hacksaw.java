@@ -11,8 +11,7 @@ public class Hacksaw extends Item {
 	public void use(String verb) {
 		try {
 			this.cwb.cut();
-			
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

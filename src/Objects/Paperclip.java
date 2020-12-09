@@ -11,7 +11,7 @@ public class Paperclip extends Item{
 	public void use(String verb) {
 		try {
 			this.lp.pick();
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

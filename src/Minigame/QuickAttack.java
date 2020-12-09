@@ -14,7 +14,7 @@ public class QuickAttack {
 		this.w = new Watch(3);
 	}
 	
-	public void attack()
+	public void attack() throws Exception
 	{
 		this.w.t.start();
 		while(true)
@@ -24,6 +24,7 @@ public class QuickAttack {
 			if(Math.abs(currAcc.x) > 15 || Math.abs(currAcc.y) > 15 || Math.abs(currAcc.z) > 15)
 			{
 				System.out.println("\nPikachu performed Quick Attack!\nIt was super effective!");
+				Sound.Player.getInstance().play("hit");
 				w.t.interrupt();
 				return;
 			}

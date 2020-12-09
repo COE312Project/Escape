@@ -23,12 +23,18 @@ public class Watch implements java.lang.Runnable {
 			System.out.print(i+"...");
 			i--;
 			try {
+				Sound.Player.getInstance().play("clock");
 				Thread.sleep(1000L);
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 				return;
 			}
 		}
 		System.out.println("You were caught!\n----------GAME OVER----------");
+		try {
+			Sound.Player.getInstance().play("groan");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		System.exit(0);
 	}
 	

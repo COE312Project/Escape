@@ -23,7 +23,7 @@ public class Player implements Runnable
 		this.t.start();
 	}
 
-	public static synchronized Player instance() throws Exception
+	public static synchronized Player getInstance() throws Exception
 	{
 		if(instance == null)
 		{
@@ -40,7 +40,7 @@ public class Player implements Runnable
 	private void playFile(String fN) throws Exception
 	{
 
-		this.as = AudioSystem.getAudioInputStream(new File(fN + ".wav").getAbsoluteFile());
+		this.as = AudioSystem.getAudioInputStream(new File("SoundEffects/"+fN + ".wav").getAbsoluteFile());
 
 		this.clip.open(as);
 		this.clip.start();
@@ -81,11 +81,11 @@ public class Player implements Runnable
 /*
 	public static void main(String[] args) throws Exception {
 		
-		String fileName = "BabyElephantWalk60";
-		Player pp = Player.instance();
+		String fileName = "boo";
+		Player pp = Player.getInstance();
 		pp.play(fileName);
 		System.out.println("one done");
-		pp.play("..\\Escape\\pacman_intro");
+		pp.play("pacman_intro");
 		System.out.println("2nd done");
 		Scanner cin = new Scanner(System.in);
 		while(true) {

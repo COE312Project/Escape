@@ -23,7 +23,7 @@ public class LockPick
 		this.tcp = new TCP_Client(ip, port);
 	}
 	
-	public void pick() throws InterruptedException
+	public void pick() throws Exception
 	{
 		System.out.println("\t\t     .--------.\r\n" + 
 				"\t\t    / .------. \\\r\n" + 
@@ -86,7 +86,10 @@ public class LockPick
 			}
 
 			if(correct)
+			{
 				System.out.println("\t✓");
+				Sound.Player.getInstance().play("lock");
+			}
 			else
 			{
 				System.out.println("\t✗");

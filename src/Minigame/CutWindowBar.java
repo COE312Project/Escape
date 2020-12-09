@@ -42,7 +42,7 @@ public class CutWindowBar {
 
 	}
 
-	public void cut() throws InterruptedException
+	public void cut() throws Exception
 	{
 
 		//KEEP CONSOLE MAXIMIZED
@@ -59,6 +59,8 @@ public class CutWindowBar {
 			{
 				System.out.print("##");	
 				count+=2;
+				if(count % 10 == 0)
+					Sound.Player.getInstance().play("scratch");
 				Thread.sleep(25);
 			}
 			else

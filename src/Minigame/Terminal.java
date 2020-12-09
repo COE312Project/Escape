@@ -13,7 +13,7 @@ public class Terminal {
 		System.out.println("Surveillance systems offline.");
 	}
 	
-	public void login()  throws InterruptedException
+	public void login()  throws Exception
 	{
 		Scanner cin = new Scanner(System.in);
 		String files = "README.txt    maintenance.sh    restore.sh";
@@ -25,19 +25,19 @@ public class Terminal {
 			switch(cmd)
 			{
 				case "whoami": 
-					System.out.println("warden"); break;
+					System.out.println("warden"); Sound.Player.getInstance().play("button"); break;
 				case "ls": 
-					System.out.println(files); break;
+					System.out.println(files); Sound.Player.getInstance().play("button"); break;
 				case "cat README.txt": 
-					System.out.println("For software updates etc. just run the maintenance script to suspend system.\nPS: Don't forget to restore afterwards"); break;
+					System.out.println("For software updates etc. just run the maintenance script to suspend system.\nPS: Don't forget to restore afterwards"); Sound.Player.getInstance().play("button"); break;
 				case "./maintenance.sh": 
 					maintenance(); break;
 				case "rm restore.sh": 
-					System.out.println("File deleted."); files = files.split("    ")[0] + "    "+ files.split("    ")[1]; break;
+					System.out.println("File deleted."); files = files.split("    ")[0] + "    "+ files.split("    ")[1]; Sound.Player.getInstance().play("button"); break;
 				case "exit": 
-					System.out.println(""); return;
+					System.out.println(""); Sound.Player.getInstance().play("shutdown"); return;
 				default:
-					System.out.println(cmd+": command not found");
+					System.out.println(cmd+": command not found"); Sound.Player.getInstance().play("error");
 			}
 
 		}
