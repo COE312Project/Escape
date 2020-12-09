@@ -1,6 +1,8 @@
  package Locations;
 
- public class Location {
+import java.util.ArrayList;
+
+public class Location {
      public String name;
 
      public ArrayList<Outside.Guard> guards;
