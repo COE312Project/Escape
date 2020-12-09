@@ -6,11 +6,16 @@ import Sensor.coord;
 public class Basketball
 {
 	TCP_Client tcp;
-	Basketball(String ip, int port)
+	
+	public Basketball() {
+		this.tcp = new TCP_Client("127.0.0.1",1234);
+	}
+	
+	public Basketball(String ip, int port)
 	{
 		this.tcp = new TCP_Client(ip, port);
 	}
-	void play()
+	public void play()
 	{
 		while(true)
 		{

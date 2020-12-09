@@ -8,7 +8,7 @@ public class Paperclip extends Item{
 		super("paperclip");
 	}
 
-	public void use() {
+	public void use(String verb) {
 		try {
 			this.lp.pick();
 		} catch (InterruptedException e) {

@@ -6,5 +6,5 @@ public abstract class Item {
         this.name = n;
     }
     
-    public abstract void use();
+    public abstract void use(String verb);
 }
