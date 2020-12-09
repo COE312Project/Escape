@@ -1,17 +1,16 @@
 package GameCharacters;
 
-public class Guard extends Character implements Runnable, NPC{
-	
+public class Guard extends NPC implements Runnable{
 	
 	Thread t;
 	
 	public Guard(String n, GameClock.Subject s, String ip, int port) {
 		super(n,s);
 		this.inventory.add(new Objects.YardKey(ip, port)); // all guards have the key
+		setDialogueBehavior(new TalkToInteractiveNPC("Where do you think you're you going, huh? Get back to your cell!"));
 		t = new Thread(this);
 		t.start();
 	}
-	
 	
 	public void defaultActivities() {
 		// all npc prisoners automatically go to cell, so if there is any prisoner in the same loc as guard, its the player
