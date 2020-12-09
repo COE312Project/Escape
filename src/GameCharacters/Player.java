@@ -2,8 +2,8 @@ package GameCharacters;
 
 public class Player extends Prisoner
 {
-    Player(String n)
+    Player(String n, GameClock.Subject s)
     {
-        super(n);
+        super(n, s);
     }
 }

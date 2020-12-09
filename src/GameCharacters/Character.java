@@ -1,10 +1,11 @@
 package GameCharacters;
 
-public class Character
+public class Character extends GameClock.ConcreteObserver
 {
     String name;
-    Character(String n)
+    Character(String n, GameClock.Subject s)
     {
+    	super(s);
         this.name = n;
     }
 }

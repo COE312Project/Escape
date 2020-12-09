@@ -1,14 +1,15 @@
 package GameCharacters;
 
-public class Guard implements Runnable, NPC{
+public class Guard extends Character implements Runnable, NPC{
 	
 	Locations.Location loc;
 	Locations.Location PlayerLoc;
 	Thread T;
-	String name;
 	
 	
-	
+	public Guard(String n, GameClock.Subject s) {
+		super(n,s);
+	}
 	
 	
 	@Override
