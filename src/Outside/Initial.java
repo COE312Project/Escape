@@ -26,8 +26,6 @@ public class Initial implements State {
 	
 	@Override
 	public void prev(Context context, Location l) {
-		// TODO Auto-generated method stub
-		
 		
 		if(l.name==al.name) {
 			
@@ -60,7 +58,6 @@ public class Initial implements State {
 
 	@Override
 	public void next(Context context, Location l) {
-		// TODO Auto-generated method stub
 		
 		l.guards.clear();
 		
