@@ -9,12 +9,16 @@ public class Pocket {
 	TCP_Client tcp;
 	int progress = 0;
 
-	Pocket(String ip, int port) {
+	public Pocket() {
+		this.tcp = new TCP_Client("127.0.0.1",1234);
+	}
+	
+	public Pocket(String ip, int port) {
 		this.tcp = new TCP_Client(ip, port);
 	
 	}
 
-	void pick() throws InterruptedException
+	public void pick() throws InterruptedException
 	{
 		System.out.println("           ___..__\r\n" + 
 				"  __..--\"\"\" ._ __.'\r\n" + 

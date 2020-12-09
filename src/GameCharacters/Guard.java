@@ -9,6 +9,7 @@ public class Guard extends Character implements Runnable, NPC{
 	
 	public Guard(String n, GameClock.Subject s) {
 		super(n,s);
+		this.inventory.add(new Objects.YardKey()); // all guards have the key
 	}
 	
 	
