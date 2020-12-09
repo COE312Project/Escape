@@ -31,7 +31,7 @@ public class Pocket {
 
 		while (true)
 		{
-			coord curGyro = this.tcp.rot;
+			coord curGyro = this.tcp.gyro;
 			System.out.print("");
 			
 			if (curGyro.x > 2.0 || curGyro.y > 2.0 ||  curGyro.z > 2.0) {

@@ -8,12 +8,14 @@ public class Watch implements java.lang.Runnable {
 	Watch(int i) { 
 		this.secs = i;
 		this.t = new Thread(this);
+		//t.start(); 
+		// timer is started in QuickAttack
+
 	}
 
 	@Override
 	public void run() {
 		this.runTimer(this.secs);
-		t.start();
 	}
 	
 	public void runTimer(int i) {
@@ -23,7 +25,8 @@ public class Watch implements java.lang.Runnable {
 			System.out.print(i+"...");
 			i--;
 			try {
-				Sound.Player.getInstance().play("clock");
+			//	Sound.Player.getInstance().play("clock");
+			//  Delays the hit sound too much
 				Thread.sleep(1000L);
 			} catch (Exception e) {
 				return;

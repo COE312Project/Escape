@@ -1,5 +1,4 @@
 package Sensor;
-
 import java.io.IOException;
 
 import java.io.InputStream;
@@ -11,6 +10,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
+import coord;
+
 import java.io.*;
 
 public class TCP_Client implements Runnable {
@@ -20,7 +21,7 @@ public class TCP_Client implements Runnable {
 	JSONParser parser;
 	// need the port 
 	int port = 8080;
-	public coord accel, rot;
+	public coord accel, gyro, rot;
 	public TCP_Client(String host, int port){
 
 		// set the ip address and the port of the 
@@ -30,6 +31,7 @@ public class TCP_Client implements Runnable {
 		this.port = port;
 		this.parser = new JSONParser();
 		this.accel = new coord();
+		this.gyro = new coord();
 		this.rot = new coord();
 
 		// make this a thread
@@ -50,23 +52,28 @@ public class TCP_Client implements Runnable {
 				
 				//parse String to JSON
 				JSONObject jsonObject1 = (JSONObject) parser.parse(line);
-				JSONObject acceljson = (JSONObject) jsonObject1.get("accelerometer");
-				JSONObject rotVjson = (JSONObject) jsonObject1.get("rotationVector");
+				JSONObject jsonObject2 = (JSONObject) jsonObject1.get("accelerometer");
+				JSONObject jsonObject3 = (JSONObject) jsonObject1.get("gyroscope");
+				JSONObject jsonObject4 = (JSONObject) jsonObject1.get("rotationVector");
 
 				//select a specific value using its key
 				JSONArray val = new JSONArray();
-				val = (JSONArray)acceljson.get("value");
-
+				val = (JSONArray)jsonObject2.get("value");
 				//print the selected value
 				this.accel.x = (double)val.get(0);
 				this.accel.y = (double)val.get(1);
 				this.accel.z = (double)val.get(2);
 				
-				val = (JSONArray)rotVjson.get("value");
-
+				val = (JSONArray)jsonObject3.get("value");
+				this.gyro.x = (double)val.get(0);
+				this.gyro.y = (double)val.get(1);
+				this.gyro.z = (double)val.get(2);
+				
+				val = (JSONArray)jsonObject4.get("value");
 				this.rot.x = (double)val.get(0);
 				this.rot.y = (double)val.get(1);
 				this.rot.z = (double)val.get(2);
+
 			}
 			//----------------------------------------------------------------------------
 		} catch (UnknownHostException ex) {

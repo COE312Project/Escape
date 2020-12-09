@@ -89,6 +89,7 @@ public class LockPick
 			{
 				System.out.println("\t✓");
 				Sound.Player.getInstance().play("lock");
+				Thread.sleep(1000);
 			}
 			else
 			{

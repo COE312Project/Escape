@@ -2,10 +2,11 @@ package Objects;
 
 public class Paperclip extends Item{
 
-	Minigame.LockPick lp = new Minigame.LockPick();
+	Minigame.LockPick lp;
 	
-	public Paperclip() {
+	public Paperclip(String ip, int port) {
 		super("paperclip");
+		lp = new Minigame.LockPick(ip, port);
 	}
 
 	public void use(String verb) {

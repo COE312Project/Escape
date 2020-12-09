@@ -2,10 +2,11 @@ package Objects;
 
 public class YardKey extends Item {
 
-	Minigame.Pocket p = new Minigame.Pocket();
+	Minigame.Pocket p;
 	
-	public YardKey() {
+	public YardKey(String ip, int port) {
 		super("key");
+		p = new Minigame.Pocket(ip, port);
 	}
 
 	public void use(String verb) {
