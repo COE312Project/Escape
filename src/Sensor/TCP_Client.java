@@ -10,8 +10,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
-import coord;
-
 import java.io.*;
 
 public class TCP_Client implements Runnable {

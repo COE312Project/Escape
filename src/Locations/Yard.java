@@ -5,12 +5,12 @@ import GameCharacters.*;
 
 public class Yard extends Location{
 
-	public Yard(ArrayList<Prisoner> p, ArrayList<Guard>g) {
+	public Yard(ArrayList<Prisoner> p, ArrayList<Guard>g, String ip, int port) {
 
 		this.name = "Yard";
 		this.prisoners = p;
 		this.guards = g;
-		this.items.add(new Objects.Hacksaw());
-		this.items.add(new Objects.Basketball());
+		this.items.add(new Objects.Hacksaw(ip, port));
+		this.items.add(new Objects.Basketball(ip, port));
 	}
 }

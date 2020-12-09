@@ -4,7 +4,7 @@ public class Driver {
 
 	public static void main(String[] args) {
 
-		String ip = "192.168.1.112"; int port = 23232;
+		String ip = "192.168.0.135"; int port = 23232;
 		
 //		Basketball bb = new Basketball(ip,port);		
 //		bb.use("");
@@ -22,15 +22,14 @@ public class Driver {
 //		try {
 //			q.attack();
 //		} catch (Exception e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 		
 //		Computer c = new Computer();
 //		c.use("");
 		
-		Food f = new Food();
-		f.use("throw");
+//		Food f = new Food();
+//		f.use("throw");
 	}
 
 }
