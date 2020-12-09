@@ -1,3 +1,6 @@
+package GameCharacters;
+
+import Locations.*;
 
 public class Final implements State {
 	
@@ -11,7 +14,6 @@ public class Final implements State {
 	boolean aleft,bUp,cUp;
 
 	public void prev(Context context) {
-		// TODO Auto-generated method stub
 		
 		ar.guards.add(g1);
 		bd.guards.add(g2);
@@ -24,7 +26,6 @@ public class Final implements State {
 	}
 
 	public void next(Context context) {
-		// TODO Auto-generated method stub
 		
 		al.guards.add(g1);
 		ar.guards.remove(0);
@@ -39,12 +40,19 @@ public class Final implements State {
 	}
 
 	public void printStatus() {
-		// TODO Auto-generated method stub
 		
 		String status1,status2, status3;
 		
 		
 		
+	}
+
+	public void prev(Context context, Location l) {
+
+	}
+
+	public void next(Context context, Location l) {
+
 	}
 
 }
