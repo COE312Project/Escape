@@ -1,10 +1,11 @@
 package Locations;
 
 import java.util.ArrayList;
+import GameCharacters.*;
 
 public class Yard extends Location{
 
-	public Yard(ArrayList<Outside.Prisoner> p, ArrayList<Outside.Guard>g) {
+	public Yard(ArrayList<Prisoner> p, ArrayList<Guard>g) {
 
 		this.name = "Cell";
 		this.prisoners = p;

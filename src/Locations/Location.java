@@ -1,12 +1,13 @@
  package Locations;
 
 import java.util.ArrayList;
+import GameCharacters.*;
 
 public class Location {
      public String name;
 
-     public ArrayList<Outside.Guard> guards = null;
-     public ArrayList<Outside.Prisoner> prisoners = null;
+     public ArrayList<Guard> guards = null;
+     public ArrayList<Prisoner> prisoners = null;
      public ArrayList<Objects.Item> items = null;
        
 }

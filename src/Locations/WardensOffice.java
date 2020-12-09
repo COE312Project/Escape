@@ -1,8 +1,10 @@
 package Locations;
 
+import GameCharacters.*;
+
 public class WardensOffice extends Location{
 
-	public WardensOffice(Outside.Guard warden) {
+	public WardensOffice(Guard warden) {
 
 		this.name = "WardensOffice";
 		this.guards.add(warden);
