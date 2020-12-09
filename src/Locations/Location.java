@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Location {
      public String name;
 
-     public ArrayList<Outside.Guard> guards;
-     public ArrayList<Outside.NPC> NPCs;
-     public ArrayList<Outside.Item> items;
-    
+     public ArrayList<Outside.Guard> guards = null;
+     public ArrayList<Outside.Prisoner> prisoners = null;
+     public ArrayList<Objects.Item> items = null;
+       
 }

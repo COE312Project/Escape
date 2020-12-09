@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Terminal {
 
-	public static void maintenance() throws InterruptedException {
+	public void maintenance() throws InterruptedException {
 		System.out.println("Starting maintenance..."); 
 		Thread.sleep(1500); 
 		System.out.println("Suspending systems...");
@@ -13,7 +13,7 @@ public class Terminal {
 		System.out.println("Surveillance systems offline.");
 	}
 	
-	public static void warden()  throws InterruptedException
+	public void login()  throws InterruptedException
 	{
 		Scanner cin = new Scanner(System.in);
 		String files = "README.txt    maintenance.sh    restore.sh";
