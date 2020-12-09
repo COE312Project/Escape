@@ -8,11 +8,14 @@ import java.util.LinkedList;
 
 public class Player implements Runnable
 {
-	Clip clip;
-	AudioInputStream as;
+	private Clip clip;
+	private AudioInputStream as;
 
-	Queue<String> files = new LinkedList<>(); // normal queue
-	Thread t;
+	private Queue<String> files = new LinkedList<>(); // normal queue
+	private Thread t;
+
+	private static Player instance;
+
 	Player() throws Exception
 	{
 		this.clip = AudioSystem.getClip();
@@ -20,12 +23,21 @@ public class Player implements Runnable
 		this.t.start();
 	}
 
+	public static synchronized Player instance() throws Exception
+	{
+		if(instance == null)
+		{
+			instance = new Player();
+		}
+		return instance;
+	}
+
 	// Can play() either using URLs or using local files but overriding will be hard
 	// with a run function
 
 	// for local files
 
-	void playFile(String fN) throws Exception
+	private void playFile(String fN) throws Exception
 	{
 
 		this.as = AudioSystem.getAudioInputStream(new File(fN + ".wav").getAbsoluteFile());
@@ -40,7 +52,7 @@ public class Player implements Runnable
 
 	}
 
-	void play(String fN) {
+	public void play(String fN) {
 		synchronized(this.files) {
 			this.files.add(fN); // files to be played are added to queue
 		}
@@ -70,7 +82,7 @@ public class Player implements Runnable
 	public static void main(String[] args) throws Exception {
 		
 		String fileName = "BabyElephantWalk60";
-		Player pp = new Player();
+		Player pp = Player.instance();
 		pp.play(fileName);
 		System.out.println("one done");
 		pp.play("..\\Escape\\pacman_intro");
