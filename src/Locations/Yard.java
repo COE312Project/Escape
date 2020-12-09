@@ -7,7 +7,7 @@ public class Yard extends Location{
 
 	public Yard(ArrayList<Prisoner> p, ArrayList<Guard>g) {
 
-		this.name = "Cell";
+		this.name = "Yard";
 		this.prisoners = p;
 		this.guards = g;
 		this.items.add(new Objects.Hacksaw());
