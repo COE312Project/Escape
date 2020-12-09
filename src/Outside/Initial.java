@@ -1,5 +1,14 @@
 package Outside;
 
+import Locations.CorridorALeft;
+import Locations.CorridorARight;
+import Locations.CorridorBDown;
+import Locations.CorridorBUp;
+import Locations.CorridorCDown;
+import Locations.CorridorCUp;
+import Locations.Location;
+
+
 public class Initial implements State {
 	
 	Locations.CorridorALeft al;
@@ -8,42 +17,118 @@ public class Initial implements State {
 	Locations.CorridorBDown bd;
 	Locations.CorridorCUp cu;
 	Locations.CorridorCDown cd;
-	Guard g1,g2,g3;
+	Guard gA,gB,gC;
 	boolean aleft,bUp,cUp;
-
-	public void prev(Context context) {
+	
+	Location loc;
+	
+	
+	
+	@Override
+	public void prev(Context context, Location l) {
+		// TODO Auto-generated method stub
 		
-		al.guards.add(g1);
-		bu.guards.add(g2);
-		cu.guards.add(g3);
-		aleft=true;
-		bUp =true;
-		cUp =true;
+		
+		if(l.name==al.name) {
+			
+			gA.loc= new CorridorALeft();
+			l.guards.add(gA);
+			aleft=true;
+			
+		}
+		
+		else if(l.name==bu.name) {
+			
+			
+			gB.loc= new CorridorBUp();
+			l.guards.add(gB);
+			bUp =true;
+			
+			}
+
+		
+		else if(l.name==al.name) {
+			
+			gC.loc= new CorridorCUp();
+			l.guards.add(gC);
+			cUp =true;
+			
+			}
 		
 		
 	}
 
-	public void next(Context context) {
+	@Override
+	public void next(Context context, Location l) {
+		// TODO Auto-generated method stub
 		
-		ar.guards.add(g1);
-		al.guards.remove(0);
-		bd.guards.add(g1);
-		bu.guards.remove(0);
-		cd.guards.add(g1);
-		cu.guards.remove(0);
+		l.guards.clear();
+		
+		gA.loc= new CorridorARight();
+		l.guards.add(gA);
+		
+		
+		
+		gB.loc= new CorridorBDown();
+		l.guards.add(gB);
+		
+		
+		gC.loc= new CorridorCDown();
+		l.guards.add(gC);
+		
+		
+		
+		
+		
 		aleft = false;
 		bUp = false;
 		cUp = false;
 		
 	}
 
+	
+
 	public void printStatus() {
 		
 		String status1,status2, status3;
 		
+		if(aleft) {
+			status1="Guard A is on the left side of the Corridor A";
+		}
+		else {
+			status1="Guard A is on the left side of the Corridor A";
+			
+		}
+		
+		if(bUp) {
+			status2="Guard B is on the upper side of the Corridor B";
+		}
+		else {
+			status2="Guard B is on the lower side of the Corridor B";
+			
+		}
+		
+		
+		if(cUp) {
+			status3="Guard C is on the upper side of the Corridor C";
+		}
+		else {
+			status3="Guard C is on the lower side of the Corridor A";
+			
+		}
+		
+		System.out.println(status1);
+		System.out.println(status2);
+		System.out.println(status3);
+		
+		
+		
+		
 		
 		
 	}
+
+
 
 	
 
