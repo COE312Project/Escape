@@ -1,4 +1,4 @@
-package Outside;
+package GameCharacters;
 
 import Locations.Location;
 

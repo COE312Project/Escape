@@ -1,4 +1,4 @@
-package Outside;
+package GameCharacters;
 
 public class Character
 {

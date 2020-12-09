@@ -1,12 +1,6 @@
-package Outside;
+package GameCharacters;
 
-import Locations.CorridorALeft;
-import Locations.CorridorARight;
-import Locations.CorridorBDown;
-import Locations.CorridorBUp;
-import Locations.CorridorCDown;
-import Locations.CorridorCUp;
-import Locations.Location;
+import Locations.*;
 
 
 public class Initial implements State {
