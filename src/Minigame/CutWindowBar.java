@@ -57,20 +57,20 @@ public class CutWindowBar {
 
 			if(Math.abs(currAcc.x) + Math.abs(currAcc.y) + Math.abs(currAcc.z) > 25.0)
 			{
-				System.out.print("##");	
-				count+=2;
-				if(count % 10 == 0)
+				if(count == 1 ||count % 33 == 0)
 					Sound.Player.getInstance().play("scratch");
-				Thread.sleep(25);
+				System.out.print("#");	
+				count++;
+				Thread.sleep(100);
 			}
 			else
 				System.out.print("");
 
 		}
-		clear(100);
+		//clear(100);
+		System.out.println("\n\n");
 		printWindow(true);
-		System.out.print("\t\t____________________________________________________________________________________________________\n\t\t####################################################################################################");
-		clear(33); //maximized console is 41 lines, 41-7 lines of wall = 34
+		//System.out.print("\t\t____________________________________________________________________________________________________\n\t\t####################################################################################################");
 
 	}
 }
