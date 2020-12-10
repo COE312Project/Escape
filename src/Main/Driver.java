@@ -10,14 +10,16 @@ import Locations.*;
 public class Driver {
 
 	//need to only pass these values here
-	public static final String IP = "192.168.0.135";
+	public static final String IP = "192.168.1.112";
 	public static final int PORT = 23232;
 	
 	public static void main(String[] args) {
 		
-		Yard yard = new Yard();
+		Cell cell = new Cell(null); // send player instance
 		
 		ConstructionZone constrZone = new ConstructionZone();
+		
+		Yard yard = new Yard(new ArrayList<Prisoner>(), new ArrayList<Guard>(), constrZone);
 		
 		CorridorCUp cUp = new CorridorCUp();
 
@@ -37,27 +39,37 @@ public class Driver {
 		
 		Cafeteria cafeteria = new Cafeteria();
 		
-		WardensOffice wardensOffice = new WardensOffice();
-		
-		yard = new Yard(new ArrayList<Prisoner>(), new ArrayList<Guard>(), constrZone, null, null, cDown, null);
-		
-		constrZone = new ConstructionZone(null, yard, yard, null);
-		
-		cDown = new CorridorCDown(cUp, dRight, null, yard);
-		
-		cUp = new CorridorCUp(null, cDown, aRight, yard);
-		
-		aRight = new CorridorARight(null, null, cUp, aLeft);
-		
-		aLeft = new CorridorALeft(null, null, aRight, bUp);
-		
-		bUp = new CorridorBUp(null, bDown, cafeteria, null);
-		
-		bDown = new CorridorBDown(bUp, dLeft, wardensOffice, null);
-		
-		wardensOffice = new WardensOffice(null, null, null, bDown);
+		WardensOffice wardensOffice = new WardensOffice(null); // send Warden instance
 		
 		
+		cell.setNeighbors(null, aLeft, null, null);
+		
+		yard.setNeighbors(null, null, cDown, null);
+		
+		constrZone.setNeighbors(null, yard, yard, null);
+		
+		cDown.setNeighbors(cUp, dRight, null, yard);
+		
+		cUp.setNeighbors(aRight, cDown, null, yard);
+		
+		aRight.setNeighbors(null, cUp, cUp, aLeft);
+		
+		aLeft.setNeighbors(null, bUp, aRight, bUp);
+		
+		bUp.setNeighbors(aLeft, bDown, cafeteria, null);
+		
+		bDown.setNeighbors(bUp, dLeft, wardensOffice, null);
+		
+		wardensOffice.setNeighbors(null, null, null, bDown);
+		
+		cafeteria.setNeighbors(null, null, null, bUp);
+		
+		dLeft.setNeighbors(bDown, null, dRight, bDown);
+		
+		dRight.setNeighbors(cDown, null, cDown, dLeft);
+
+		YardKey key = new YardKey();
+		key.use("");
 		
 	}
 

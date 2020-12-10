@@ -5,10 +5,10 @@ public class Basketball extends Item{
 	Minigame.Basketball bb;
 	public Basketball() {
 		super("basketball");
-		bb = new Minigame.Basketball();
 	}
 	
 	public void use(String verb) {
+		bb = new Minigame.Basketball();
 		this.bb.play();
 	}
 }

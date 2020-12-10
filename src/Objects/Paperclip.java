@@ -6,10 +6,11 @@ public class Paperclip extends Item{
 	
 	public Paperclip() {
 		super("paperclip");
-		lp = new Minigame.LockPick();
 	}
 
 	public void use(String verb) {
+		lp = new Minigame.LockPick();
+
 		try {
 			this.lp.pick();
 		} catch (Exception e) {

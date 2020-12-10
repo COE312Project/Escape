@@ -24,16 +24,16 @@ public class Move implements Command {
 		this.args = arg.split(" ");
 
 		if (arg.toLowerCase().contains("north") && curr.north != null){ 
-			curr = curr.north;	curr.enter();
+			curr = curr.north;	//curr.enter();
 		}
 		else if(arg.toLowerCase().contains("south") && curr.south != null){
-			curr = curr.south;	curr.enter(); 
+			curr = curr.south;	//curr.enter(); 
 		}
 		else if(arg.toLowerCase().contains("east") && curr.east != null) {
-			curr = curr.east;	curr.enter(); 
+			curr = curr.east;	//curr.enter(); 
 		}
 		else if(arg.toLowerCase().contains("west") && curr.west != null){ 
-			curr = curr.west;	curr.enter(); 
+			curr = curr.west;	//curr.enter(); 
 		}
 		else
 			System.out.println("You cannot go there!"); 

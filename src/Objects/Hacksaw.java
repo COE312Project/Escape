@@ -6,10 +6,10 @@ public class Hacksaw extends Item {
 	
 	public Hacksaw() {
 		super("hacksaw");
-		cwb = new Minigame.CutWindowBar();
 	}
 	
 	public void use(String verb) {
+		cwb = new Minigame.CutWindowBar();
 		try {
 			this.cwb.cut();
 		} catch (Exception e) {

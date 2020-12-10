@@ -6,10 +6,11 @@ public class YardKey extends Item {
 	
 	public YardKey() {
 		super("key");
-		p = new Minigame.Pocket();
 	}
 
 	public void use(String verb) {
+		p = new Minigame.Pocket();
+
 		try {
 			this.p.pick();
 		} catch (InterruptedException e) {
