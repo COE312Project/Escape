@@ -4,8 +4,8 @@ import GameCharacters.*;
 
 public class Cell extends Location {
 
-	public Cell(Prisoner p) {
-		
+	public Cell(Prisoner p, Location n, Location s, Location e, Location w) {
+		super(n,s,e,w);
 		this.name = "Cell";
 		this.prisoners.add(p);
 	}
