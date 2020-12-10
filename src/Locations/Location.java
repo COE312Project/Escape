@@ -11,6 +11,11 @@ public class Location {
      public ArrayList<Objects.Item> items = null;
      public Location north, south, east, west;
      
+     public Location()
+     {
+    	 this.north = this.south = this.east = this.west = null;
+     }
+     
      public Location(Location n, Location s, Location e, Location w) {
     	 this.north = n;
     	 this.south = s;
