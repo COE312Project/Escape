@@ -3,14 +3,14 @@ import Objects.*;
 
 import java.util.ArrayList;
 
-import GameCharacters.Guard;
-import GameCharacters.Prisoner;
+import GameClock.*;
+import GameCharacters.*;
 import Locations.*;
 
 public class Driver {
 
 	//need to only pass these values here
-	public static final String IP = "192.168.1.112";
+	public static final String IP = "192.168.0.159";
 	public static final int PORT = 23232;
 	
 	public static void main(String[] args) {
@@ -38,9 +38,11 @@ public class Driver {
 		CorridorBDown bDown = new CorridorBDown();
 		
 		Cafeteria cafeteria = new Cafeteria();
+
+		WardensOffice wardensOffice = new WardensOffice(); // send Warden instance
+		Warden w = new Warden(new Clock(), wardensOffice);
 		
-		WardensOffice wardensOffice = new WardensOffice(null); // send Warden instance
-		
+		wardensOffice.guards.add(w);
 		
 		cell.setNeighbors(null, aLeft, null, null);
 		
@@ -68,8 +70,7 @@ public class Driver {
 		
 		dRight.setNeighbors(cDown, null, cDown, dLeft);
 
-		YardKey key = new YardKey();
-		key.use("");
+		wardensOffice.guards.get(0).inventory.get(0).use("");
 		
 	}
 

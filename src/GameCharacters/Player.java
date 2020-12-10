@@ -3,9 +3,9 @@ package GameCharacters;
 public class Player extends Prisoner implements Runnable
 {
 	Thread t;
-    Player(String n, GameClock.Subject s)
+    Player(String n, GameClock.Subject s, Locations.Location l)
     {
-        super(n, s);
+        super(n, s, l);
         t = new Thread(this);
         t.start();
     }

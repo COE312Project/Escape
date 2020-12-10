@@ -6,8 +6,8 @@ public abstract class NPC extends Character
 {
 	DialogueBehavior dB;
 
-	public NPC(String n, Subject s) {
-		super(n, s);
+	public NPC(String n, Subject s, Locations.Location l) {
+		super(n, s, l);
 	}
 
     public void performTalk()

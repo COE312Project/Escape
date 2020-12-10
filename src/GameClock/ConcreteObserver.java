@@ -12,8 +12,6 @@ public class ConcreteObserver implements Observer{
 
 	public void update(int time)
 	{
-		synchronized(this.time) {
-			this.time = time;
-		}
+		this.time = time;
 	}
 }

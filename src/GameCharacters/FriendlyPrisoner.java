@@ -7,8 +7,8 @@ public class FriendlyPrisoner extends Prisoner implements Runnable
 
 	Thread t;
 	
-	FriendlyPrisoner(String n, Subject s) {
-		super(n, s);
+	FriendlyPrisoner(String n, Subject s, Locations.Location l) {
+		super(n, s, l);
 		//idk why but i gave him a mexican accent here
 		setDialogueBehavior(new TalkToInteractiveNPC("Come-a to play basketball with us some-ay time eh?")); // this is Italian
 		this.inventory.add(new GameAssets.GameMap());
