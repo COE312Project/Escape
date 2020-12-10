@@ -5,7 +5,7 @@ import java.util.Map;
 //import java.util.Scanner;
 
 
-public class GameMap {
+public class GameMap extends Objects.Item{
 
 	private String map = 
 					"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\r\n" + 
@@ -51,6 +51,9 @@ public class GameMap {
 	Map <String, Integer> locCoord = new HashMap<String,Integer>();
 
 	public GameMap() {
+		
+		super("map");
+		
 		locCoord.put("OuterNorth",140);
 		locCoord.put("Cell",491);
 		locCoord.put("CorridorALeft",871);
@@ -89,6 +92,12 @@ public class GameMap {
 			System.exit(0);
 		}
 
+	}
+
+
+	
+	public void use(String verb) {
+		this.printMap();
 	}
 
 	// Uncomment the following code to test it (import scanner)

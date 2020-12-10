@@ -10,7 +10,8 @@ public class FriendlyPrisoner extends Prisoner implements Runnable
 	FriendlyPrisoner(String n, Subject s) {
 		super(n, s);
 		//idk why but i gave him a mexican accent here
-		setDialogueBehavior(new TalkToInteractiveNPC("Come-a to play basketball with us some-ay time eh?"));
+		setDialogueBehavior(new TalkToInteractiveNPC("Come-a to play basketball with us some-ay time eh?")); // this is Italian
+		this.inventory.add(new GameAssets.GameMap());
 		t = new Thread(this);
 		t.start();
 	}
