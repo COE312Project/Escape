@@ -8,8 +8,8 @@ public class WardensOffice extends Location{
 	{
 		super();
 		this.name = "WardensOffice";
+		w.inventory.add(new Objects.Paperclip());
 		this.guards.add(w);
-		this.items.add(new Objects.Paperclip());
 		this.items.add(new Objects.Computer());
 	}
 

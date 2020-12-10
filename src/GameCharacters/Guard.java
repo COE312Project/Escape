@@ -24,7 +24,7 @@ public class Guard extends NPC implements Runnable{
 	public void run() 
 	{
 		while(true) {
-			this.defaultActivities();			
+			this.defaultActivities();
 		}
 	}
 
