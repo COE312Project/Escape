@@ -4,9 +4,9 @@ public class Hacksaw extends Item {
 
 	Minigame.CutWindowBar cwb;
 	
-	public Hacksaw(String ip, int port) {
+	public Hacksaw() {
 		super("hacksaw");
-		cwb = new Minigame.CutWindowBar(ip,port);
+		cwb = new Minigame.CutWindowBar();
 	}
 	
 	public void use(String verb) {

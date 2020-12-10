@@ -8,9 +8,9 @@ public class QuickAttack {
 	
 	TCP_Client tcp;
 	Watch w;
-	public QuickAttack(String ip, int port)
+	public QuickAttack()
 	{
-		this.tcp = new TCP_Client(ip, port);
+		this.tcp = new TCP_Client();
 		this.w = new Watch(3);
 	}
 	

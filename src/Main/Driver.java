@@ -1,35 +1,28 @@
 package Main;
 import Objects.*;
+
+import java.util.ArrayList;
+
+import GameCharacters.Guard;
+import GameCharacters.Prisoner;
+import Locations.*;
+
 public class Driver {
 
+	//need to only change these values here
+	public static final String IP = "192.168.0.135";
+	public static final int PORT = 23232;
+	
 	public static void main(String[] args) {
-
-		String ip = "192.168.0.135"; int port = 23232;
 		
-//		Basketball bb = new Basketball(ip,port);		
-//		bb.use("");
+		//ArrayList<Prisoner> p, ArrayList<Guard>g, String ip, int port, ConstructionZone cz, Location n, Location s, Location e, Location w
+		Yard yard = new Yard(new ArrayList<Prisoner>(), new ArrayList<Guard>(), null, null, null, null, null);
 		
-//		Hacksaw hs = new Hacksaw(ip, port);
-//		hs.use("");
+		//String ip, int port ,Location n, Location s, Location e, Location w
+		ConstructionZone constructionZone = new ConstructionZone(null, yard, null, yard);
 		
-//		YardKey key = new YardKey(ip,port);
-//		key.use("");
 		
-//		Paperclip pc = new Paperclip(ip,port);
-//		pc.use("");
 		
-//		Minigame.QuickAttack q = new Minigame.QuickAttack(ip,port);
-//		try {
-//			q.attack();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-		
-//		Computer c = new Computer();
-//		c.use("");
-		
-//		Food f = new Food();
-//		f.use("throw");
 	}
 
 }

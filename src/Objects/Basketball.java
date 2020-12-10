@@ -3,9 +3,9 @@ package Objects;
 public class Basketball extends Item{
 
 	Minigame.Basketball bb;
-	public Basketball(String ip, int port) {
+	public Basketball() {
 		super("basketball");
-		bb = new Minigame.Basketball(ip, port);
+		bb = new Minigame.Basketball();
 	}
 	
 	public void use(String verb) {

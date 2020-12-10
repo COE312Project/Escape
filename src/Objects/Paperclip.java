@@ -4,9 +4,9 @@ public class Paperclip extends Item{
 
 	Minigame.LockPick lp;
 	
-	public Paperclip(String ip, int port) {
+	public Paperclip() {
 		super("paperclip");
-		lp = new Minigame.LockPick(ip, port);
+		lp = new Minigame.LockPick();
 	}
 
 	public void use(String verb) {

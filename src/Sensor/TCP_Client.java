@@ -15,18 +15,18 @@ import java.io.*;
 public class TCP_Client implements Runnable {
 
 	// ip address of the machine 
-	String host = "127.0.0.1";
+	String host = Main.Driver.IP;
+	
 	JSONParser parser;
-	// need the port 
-	int port = 8080;
-	public coord accel, gyro, rot;
-	public TCP_Client(String host, int port){
 
-		// set the ip address and the port of the 
+	// need the port 
+	int port = Main.Driver.PORT;
+	public coord accel, gyro, rot;
+	public TCP_Client(){
+
+		// no need to set the ip address and the port of the 
 		// the server we will connect to.
 
-		this.host = host;
-		this.port = port;
 		this.parser = new JSONParser();
 		this.accel = new coord();
 		this.gyro = new coord();

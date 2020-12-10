@@ -15,12 +15,9 @@ public class LockPick
 	 * ← = Phone facing left
 	 * → = Phone facing right
 	 */
-	public LockPick(){
-		this.tcp = new TCP_Client("127.0.0.1",1423);
-	}
-	public LockPick(String ip, int port)
+	public LockPick()
 	{
-		this.tcp = new TCP_Client(ip, port);
+		this.tcp = new TCP_Client();
 	}
 	
 	public void pick() throws Exception

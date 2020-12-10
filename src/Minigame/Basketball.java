@@ -8,11 +8,7 @@ public class Basketball {
 	TCP_Client tcp;
 	int score = 0;
 	public Basketball() {
-		this.tcp = new TCP_Client("127.0.0.1", 1234);
-	}
-
-	public Basketball(String ip, int port) {
-		this.tcp = new TCP_Client(ip, port);
+		this.tcp = new TCP_Client();
 	}
 
 	public void play() {

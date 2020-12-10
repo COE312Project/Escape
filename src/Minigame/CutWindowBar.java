@@ -7,12 +7,9 @@ public class CutWindowBar {
 	public TCP_Client tcp;
 
 	public CutWindowBar(){
-		this.tcp = new TCP_Client("127.0.0.1",1423);
+		this.tcp = new TCP_Client();
 	}
 	
-	public CutWindowBar(String ip, int port){
-		this.tcp = new TCP_Client(ip ,port);
-	}
 	public void clear(int n) {
 		for(int i=0;i<n;i++)
 			System.out.println("");
