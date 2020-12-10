@@ -18,9 +18,24 @@ public class Driver {
 		//ArrayList<Prisoner> p, ArrayList<Guard>g, ConstructionZone cz, Location n, Location s, Location e, Location w
 		Yard yard = new Yard();
 		
-		ConstructionZone constructionZone = new ConstructionZone(null, yard, null, yard);
+		ConstructionZone constructionZone = new ConstructionZone();
 		
+		CorridorCUp corridoorCUp = new CorridorCUp();
+
 		CorridorCDown corridoorCDown = new CorridorCDown();
+		
+		CorridorALeft corridoorALeft = new CorridorALeft();
+		
+		CorridorARight corridoorARight = new CorridorARight();
+		
+		CorridorDLeft corridoorDLeft = new CorridorDLeft();
+		
+		CorridorDRight corridoorDRight = new CorridorDRight();
+		
+		CorridorBUp corridorBUp = new CorridorBUp();
+
+		CorridorBDown corridoorBDown = new CorridorBDown();
+		
 		
 	}
 
