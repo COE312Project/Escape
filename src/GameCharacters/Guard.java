@@ -14,7 +14,7 @@ public class Guard extends NPC implements Runnable{
 	
 	public void defaultActivities() {
 		// all npc prisoners automatically go to cell, so if there is any prisoner in the same loc as guard, its the player
-		if((this.time >= 19 || this.time <= 6) && !this.loc.prisoners.isEmpty()) 
+		if((this.time >= 19 || this.time <= 6) && this.loc != null && !this.loc.prisoners.isEmpty()) 
 		{
 			System.out.print("YOU ARE CAUGHT!!! ");
 			System.exit(0);

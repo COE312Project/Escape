@@ -2,7 +2,7 @@ package GameClock;
 
 public class ConcreteObserver implements Observer{
 
-	public Integer time;
+	public Integer time = 0;
 	Subject subject;
 
 	public ConcreteObserver(Subject s) {

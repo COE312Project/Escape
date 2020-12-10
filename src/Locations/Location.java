@@ -22,5 +22,9 @@ public class Location {
     	 this.east = e;
     	 this.west = w;
      }
+     
+     public void enter() {
+    	 System.out.println("\t[ " + this.name + " ]");
+     }
        
 }
