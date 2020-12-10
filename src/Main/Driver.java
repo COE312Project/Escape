@@ -15,26 +15,48 @@ public class Driver {
 	
 	public static void main(String[] args) {
 		
-		//ArrayList<Prisoner> p, ArrayList<Guard>g, ConstructionZone cz, Location n, Location s, Location e, Location w
 		Yard yard = new Yard();
 		
-		ConstructionZone constructionZone = new ConstructionZone();
+		ConstructionZone constrZone = new ConstructionZone();
 		
-		CorridorCUp corridoorCUp = new CorridorCUp();
+		CorridorCUp cUp = new CorridorCUp();
 
-		CorridorCDown corridoorCDown = new CorridorCDown();
+		CorridorCDown cDown = new CorridorCDown();
 		
-		CorridorALeft corridoorALeft = new CorridorALeft();
+		CorridorALeft aLeft = new CorridorALeft();
 		
-		CorridorARight corridoorARight = new CorridorARight();
+		CorridorARight aRight = new CorridorARight();
 		
-		CorridorDLeft corridoorDLeft = new CorridorDLeft();
+		CorridorDLeft dLeft = new CorridorDLeft();
 		
-		CorridorDRight corridoorDRight = new CorridorDRight();
+		CorridorDRight dRight = new CorridorDRight();
 		
-		CorridorBUp corridorBUp = new CorridorBUp();
+		CorridorBUp bUp = new CorridorBUp();
 
-		CorridorBDown corridoorBDown = new CorridorBDown();
+		CorridorBDown bDown = new CorridorBDown();
+		
+		Cafeteria cafeteria = new Cafeteria();
+		
+		WardensOffice wardensOffice = new WardensOffice();
+		
+		yard = new Yard(new ArrayList<Prisoner>(), new ArrayList<Guard>(), constrZone, null, null, cDown, null);
+		
+		constrZone = new ConstructionZone(null, yard, yard, null);
+		
+		cDown = new CorridorCDown(cUp, dRight, null, yard);
+		
+		cUp = new CorridorCUp(null, cDown, aRight, yard);
+		
+		aRight = new CorridorARight(null, null, cUp, aLeft);
+		
+		aLeft = new CorridorALeft(null, null, aRight, bUp);
+		
+		bUp = new CorridorBUp(null, bDown, cafeteria, null);
+		
+		bDown = new CorridorBDown(bUp, dLeft, wardensOffice, null);
+		
+		wardensOffice = new WardensOffice(null, null, null, bDown);
+		
 		
 		
 	}

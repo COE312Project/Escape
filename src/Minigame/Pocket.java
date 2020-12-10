@@ -12,11 +12,6 @@ public class Pocket {
 	public Pocket() {
 		this.tcp = new TCP_Client();
 	}
-	
-	public Pocket(String ip, int port) {
-		this.tcp = new TCP_Client();
-	
-	}
 
 	public void pick() throws InterruptedException
 	{

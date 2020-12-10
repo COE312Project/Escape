@@ -4,9 +4,9 @@ public class YardKey extends Item {
 
 	Minigame.Pocket p;
 	
-	public YardKey(String ip, int port) {
+	public YardKey() {
 		super("key");
-		p = new Minigame.Pocket(ip, port);
+		p = new Minigame.Pocket();
 	}
 
 	public void use(String verb) {

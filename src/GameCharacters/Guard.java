@@ -4,9 +4,9 @@ public class Guard extends NPC implements Runnable{
 	
 	Thread t;
 	
-	public Guard(String n, GameClock.Subject s, String ip, int port) {
+	public Guard(String n, GameClock.Subject s) {
 		super(n,s);
-		this.inventory.add(new Objects.YardKey(ip, port)); // all guards have the key
+		this.inventory.add(new Objects.YardKey()); // all guards have the key
 		setDialogueBehavior(new TalkToInteractiveNPC("Where do you think you're you going, huh? Get back to your cell!"));
 		t = new Thread(this);
 		t.start();
