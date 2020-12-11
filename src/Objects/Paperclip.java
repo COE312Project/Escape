@@ -6,6 +6,8 @@ public class Paperclip extends Item{
 	
 	public Paperclip() {
 		super("paperclip");
+		super.canBeTaken();
+		verbs.add("pick");
 	}
 
 	public void use(String verb) {

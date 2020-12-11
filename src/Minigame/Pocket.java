@@ -31,6 +31,7 @@ public class Pocket {
 			
 			if (curGyro.x > 2.0 || curGyro.y > 2.0 ||  curGyro.z > 2.0) {
 				System.out.println("\n\t\t\t\t\t\t\t\tYou alerted the guard!");
+				System.exit(0);
 				return;
 			}
 			

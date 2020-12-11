@@ -6,6 +6,9 @@ public class Hacksaw extends Item {
 	
 	public Hacksaw() {
 		super("hacksaw");
+		super.canBeTaken();
+		verbs.add("cut");
+		verbs.add("saw");
 	}
 	
 	public void use(String verb) {

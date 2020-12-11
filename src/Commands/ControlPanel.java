@@ -15,6 +15,7 @@ public class ControlPanel {
 		{
 			if(cmds[i].isSynonym(op)) {
 				cmds[i].execute(cmd);
+				return;
 			}
 		}
 		System.out.println("I do not understand that. You could try the help command");

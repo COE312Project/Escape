@@ -1,6 +1,6 @@
 package Main;
 import Objects.*;
-
+import Commands.*;
 import java.util.ArrayList;
 
 import GameClock.*;
@@ -82,14 +82,20 @@ public class Driver {
 		Player player = new Player("Prisoner420",clock,cell);
 		cell.prisoners.add(player);
 		
-
+		Move move = new Move(curr);
+		Take take = new Take(player);
+		Use use = new Use(player);
+		Command[] cmds = new Command[] {move, take, use};
+		ControlPanel cp = new ControlPanel(cmds);
+	
+		
 		// This proves that the hw issue is solved:
-/*		Commands.Move move = new Commands.Move(curr);
+/*		Move move = new Move(curr);
 		move.execute("go south");
 		System.out.println(curr.loc); */
 		
 		
-
+		//System.exit(0);
 
 		
 

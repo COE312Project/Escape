@@ -2,7 +2,7 @@ package Commands;
 
 public class Take implements Command {
 
-	String[] synonyms = new String[]{"take","pick-up", "grab"};
+	String[] synonyms = new String[]{"take","pick-up", "grab","steal"};
 	String[] args;
 	GameCharacters.Player player;
 
@@ -21,12 +21,20 @@ public class Take implements Command {
 	public void execute(String arg)
 	{
 		this.args = arg.split(" ");
+		String cmd = args[0];
 
 		for(Objects.Item i : this.player.loc.items) {
 			if(arg.toLowerCase().contains(i.name)) {
-				this.player.inventory.add(i);
-				this.player.loc.items.remove(i);
-				System.out.println(i.name + " added to inventory!");
+				if(i.verbs.contains(cmd.toLowerCase())) {
+					if(i.isException)
+						i.use(cmd);
+					this.player.inventory.add(i);
+					this.player.loc.items.remove(i);
+					i.acquired = true;
+					System.out.println(i.name + " added to inventory!");
+				}
+				else
+					System.out.println("You cannot do that!");
 				return;
 			}
 		}

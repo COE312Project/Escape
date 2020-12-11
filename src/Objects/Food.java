@@ -4,6 +4,9 @@ public class Food extends Item{
 
 	public Food() {
 		super("food");
+		super.canBeTaken();
+		verbs.add("eat");
+		verbs.add("throw");
 	}
 
 	
