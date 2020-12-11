@@ -13,7 +13,7 @@ public class Warden extends Guard{
 			try {
 				Thread.sleep(200); // so that the location title gets printed before warden freaks out
 			} catch (InterruptedException e) {}
-			System.out.println("Hey! What are you doing in here?! That's it, solitary confinement for you!");
+			System.out.println("\nHey! What are you doing in here?! That's it, solitary confinement for you!");
 			System.exit(0);
 		}
 		else

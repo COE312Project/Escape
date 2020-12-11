@@ -2,6 +2,7 @@ package Main;
 import Objects.*;
 import Commands.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import GameClock.*;
 import GameCharacters.*;
@@ -54,7 +55,7 @@ public class Driver {
 
 		aRight.setNeighbors(null, cUp, cUp, aLeft);
 
-		aLeft.setNeighbors(null, bUp, aRight, bUp);
+		aLeft.setNeighbors(cell, bUp, aRight, bUp);
 
 		bUp.setNeighbors(aLeft, bDown, cafeteria, null);
 
@@ -88,8 +89,13 @@ public class Driver {
 		Command[] cmds = new Command[] {move, take, use};
 		ControlPanel cp = new ControlPanel(cmds);
 	
+		Scanner cin = new Scanner(System.in);
 		
-
+		while(true)
+		{
+			System.out.print("> ");
+			cp.parse(cin.nextLine());
+		}
 		
 		// This proves that the hw issue is solved:
 /*		Move move = new Move(curr);

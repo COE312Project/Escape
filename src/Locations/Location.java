@@ -24,7 +24,8 @@ public class Location {
      }
      
      public void enter() {
-    	 System.out.println("\t[ " + this.name + " ]");
+    	 System.out.println("\t\t" + this.name);
+    	 System.out.println("\t\t"+"¯".repeat(this.name.length()));
      }
        
 }
