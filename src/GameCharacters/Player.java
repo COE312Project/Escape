@@ -4,6 +4,8 @@ public class Player extends Prisoner implements Runnable
 {
 	Thread t;
 	Boolean warned = false;
+	public GameAssets.GameMap map = null;
+	
 	public Player(String n, GameClock.Subject s, Locations.Location l)
 	{
 		super(n, s, l);

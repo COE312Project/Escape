@@ -4,7 +4,7 @@ package GameClock;
 public class Clock extends ConcreteSubject implements Runnable{
 
 	Thread t;
-	int time = 0;
+	int time = 7;
 	
 	public Clock() {
 		this.t = new Thread(this);
@@ -14,6 +14,9 @@ public class Clock extends ConcreteSubject implements Runnable{
 
 	public void run() {
 
+		try {
+			Thread.sleep(1000); // to give observers time to register themselves
+		} catch (InterruptedException e1) {}
 		while(true) 
 		{
 			super.notifyObservers(time);

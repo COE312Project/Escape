@@ -2,7 +2,7 @@ package Commands;
 
 public class Use implements Command{
 
-	String[] synonyms = new String[]{"use","play","access","login","eat","throw","cut","saw","pick","steal"};
+	String[] synonyms = new String[]{"use","play","access","login","eat","throw","cut","saw","pick","steal","map","check"};
 	String[] args;
 	GameCharacters.Player player;
 

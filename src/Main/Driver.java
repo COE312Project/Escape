@@ -1,6 +1,7 @@
 package Main;
 import Objects.*;
 import Commands.*;
+import GameAssets.GameMap;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class Driver {
 
 		cell.setNeighbors(null, aLeft, null, null);
 
-		yard.setNeighbors(constrZone, null, cDown, null);
+		yard.setNeighbors(constrZone, null, cUp, null);
 
 		constrZone.setNeighbors(null, yard, yard, null);
 
@@ -94,7 +95,9 @@ public class Driver {
 		// Start.start();
 	
 		Scanner cin = new Scanner(System.in);
-
+		GameAssets.GameMap map = new GameAssets.GameMap();
+		player.inventory.add(map);
+		player.map = map;
 		
 		while(true)
 		{

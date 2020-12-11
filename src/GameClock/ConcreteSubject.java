@@ -14,6 +14,7 @@ public abstract class ConcreteSubject implements Subject{
 	
 	public void notifyObservers(int data)
 	{
+
 		for(Observer o:this.observers) {
 			o.update(data);
 		}

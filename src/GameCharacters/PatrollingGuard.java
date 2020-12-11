@@ -19,6 +19,7 @@ public class PatrollingGuard extends Guard{
 		if(time % 2 == 0) {
 			if(!moved) {
 				this.ctxt.nextState();
+				//System.out.println(this.loc.name);
 				moved = true;
 			}
 		}
@@ -27,7 +28,7 @@ public class PatrollingGuard extends Guard{
 
 		if((this.time >= 19 || this.time <= 6) && this.loc != null && !this.loc.prisoners.isEmpty()) 
 		{
-			System.out.print("\nYou there! What are you doing outside your cell ?!\n" + time);
+			System.out.print("\nYou there! What are you doing outside your cell ?!\n");
 			System.exit(0);
 		}
 		else

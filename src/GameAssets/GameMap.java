@@ -11,37 +11,37 @@ public class GameMap extends Objects.Item{
 					"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\r\n" + 
 					"▓C                                                                                        C▓\r\n" + 
 					"▓                                                                                          ▓\r\n" + 
-					"▓   ████████████████████████████████████████████████████████████████████████████████████   ▓\r\n" + 
-					"▓   █          ██YOUR CELL ██          ██          ██          ██          ██          █   ▓\r\n" + 
-					"▓   █          ██          ██          ██          ██          ██          ██          █   ▓\r\n" + 
-					"▓   █          ██          ██          ██          ██          ██          ██          █   ▓\r\n" + 
-					"▓   ████████████████████████████████████████████████████████████████████████████████████   ▓\r\n" + 
+					"▓   █▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀▀▀▀█   ▓\r\n" + 
+					"▓   █          █ YOUR CELL █           █           █           █           █           █   ▓\r\n" + 
+					"▓   █          █           █           █           █           █           █           █   ▓\r\n" + 
+					"▓   █          █           █           █           █           █           █           █   ▓\r\n" + 
+					"▓   █▄▄▄▄▄▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▄█   ▓\r\n" + 
 					"▓   █                                                                                  █   ▓\r\n" + 
 					"▓   █                                                                                  █   ▓\r\n" + 
 					"▓   █                                                                                  █   ▓\r\n" + 
-					"▓   █    C████████████████████████████████████████████████████████████████████████C    █   ▓\r\n" + 
+					"▓   █    C█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█C    █   ▓\r\n" + 
 					"▓   █     █                                    █                                 █     █   ▓\r\n" + 
 					"▓   █     █             CAFETERIA              █               YARD              █     █   ▓\r\n" + 
 					"▓   █     █                                    █                                 █     █   ▓\r\n" + 
 					"▓   █                                          █                                 █     █   ▓\r\n" + 
-					"▓   █                                          █                                 █     █   ▓\r\n" + 
-					"▓   █                                          █                                 █     █   ▓\r\n" + 
+					"▓   █                                          █                                       █   ▓\r\n" + 
+					"▓   █                                          █                                       █   ▓\r\n" + 
 					"▓   █     █                                    █                                       █   ▓\r\n" + 
 					"▓   █     █                                    █                                       █   ▓\r\n" + 
-					"▓   █     ██████████████████████████████████████                                       █   ▓\r\n" + 
+					"▓   █     █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█                                       █   ▓\r\n" + 
 					"▓   █     █                                    █                                       █   ▓\r\n" + 
-					"▓   █     █          WARDEN'S OFFICE           █                                       █   ▓\r\n" + 
+					"▓   █     █          WARDEN'S OFFICE           █                                 █     █   ▓\r\n" + 
 					"▓   █     █                                    █                                 █     █   ▓\r\n" + 
 					"▓   █                                          █                                 █     █   ▓\r\n" + 
 					"▓   █                                          █                                 █     █   ▓\r\n" + 
 					"▓   █                                          █                                 █     █   ▓\r\n" + 
 					"▓   █     █                                    █                                 █     █   ▓\r\n" + 
 					"▓   █     █                                    █                                 █     █   ▓\r\n" + 
-					"▓   █    C████████████████████████████████████████████████████████████████████████C    █   ▓\r\n" + 
+					"▓   █    C█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█C    █   ▓\r\n" + 
 					"▓   █                                                                                  █   ▓\r\n" + 
 					"▓   █                                                                                  █   ▓\r\n" + 
 					"▓   █                                                                                  █   ▓\r\n" + 
-					"▓   ████████████████████████████████████████≡≡≡|≡≡≡█████████████████████████████████████   ▓\r\n" + 
+					"▓   █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█≡≡≡|≡≡≡█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█   ▓\r\n" + 
 					"▓                                                                                          ▓\r\n" + 
 					"▓C                                                                                        C▓\r\n" + 
 					"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓";
@@ -53,6 +53,9 @@ public class GameMap extends Objects.Item{
 	public GameMap() {
 		
 		super("map");
+		super.canBeTaken();
+		verbs.add("map");
+		verbs.add("check");
 		
 		locCoord.put("OuterNorth",140);
 		locCoord.put("Cell",491);
@@ -77,7 +80,7 @@ public class GameMap extends Objects.Item{
 
 	public void printMap() {
 		String newMap = this.map.substring(0,curLoc) + "☺" + this.map.substring(curLoc + 1);
-		System.out.println(newMap); // keep the original map intact, otherwise we've to remove the previous X
+		System.out.println("\n" + newMap); // keep the original map intact, otherwise we've to remove the previous X
 
 
 	}
@@ -88,8 +91,8 @@ public class GameMap extends Objects.Item{
 		}
 		else
 		{
-			System.out.println("Err: Send proper location name!!!");// should never happen
-			System.exit(0);
+			//System.out.println("Err: Send proper location name!!!");// should never happen
+			//System.exit(0);
 		}
 
 	}

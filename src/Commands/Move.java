@@ -55,5 +55,8 @@ public class Move implements Command {
 		}
 		else
 			System.out.println("You cannot go there!"); 
+		
+		if(player.map != null)
+			player.map.setLocation(curr.loc.name);
 	}
 }
