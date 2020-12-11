@@ -68,20 +68,28 @@ public class Driver {
 
 		dRight.setNeighbors(cDown, null, cDown, dLeft);
 		
-		Warden w = new Warden(new Clock(), wardensOffice);
+		GameClock.Clock clock = new Clock();
+		
+		Warden w = new Warden(clock, wardensOffice);
 		wardensOffice.guards.add(w);
 		
 		CurrentLocation curr = new CurrentLocation(); // now curr has an identity
 		curr.loc = cell;
-	
+		
+		// Uncomment if you have 20 seconds to spare
+		//Start.start();
+		
+		Player player = new Player("Prisoner420",clock,cell);
+		cell.prisoners.add(player);
+		
+
 		// This proves that the hw issue is solved:
 /*		Commands.Move move = new Commands.Move(curr);
 		move.execute("go south");
 		System.out.println(curr.loc); */
 		
 		
-		// Uncomment if you have 20 seconds to spare
-		//Start.start();
+
 
 		
 

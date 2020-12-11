@@ -1,7 +1,7 @@
 package Objects;
 
 public abstract class Item {
-    String name;
+    public String name;
     public Item(String n) {
         this.name = n;
     }
