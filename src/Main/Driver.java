@@ -1,6 +1,8 @@
 package Main;
 import Objects.*;
 import Commands.*;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -49,7 +51,7 @@ public class Driver {
 
 		constrZone.setNeighbors(null, yard, yard, null);
 
-		cDown.setNeighbors(cUp, dRight, null, yard);
+		cDown.setNeighbors(cUp, dRight, null, dRight);
 
 		cUp.setNeighbors(aRight, cDown, null, yard);
 
@@ -77,19 +79,22 @@ public class Driver {
 		CurrentLocation curr = new CurrentLocation(); // now curr has an identity
 		curr.loc = cell;
 		
-		// Uncomment if you have 20 seconds to spare
-		//Start.start();
-		
 		Player player = new Player("Prisoner420",clock,cell);
 		cell.prisoners.add(player);
+		
+		PatrollingGuard pguard = new PatrollingGuard("Jeff", clock, aLeft);
 		
 		Move move = new Move(curr, player);
 		Take take = new Take(player);
 		Use use = new Use(player);
 		Command[] cmds = new Command[] {move, take, use};
 		ControlPanel cp = new ControlPanel(cmds);
+		
+		// Uncomment if you have 20 seconds to spare
+		// Start.start();
 	
 		Scanner cin = new Scanner(System.in);
+
 		
 		while(true)
 		{
