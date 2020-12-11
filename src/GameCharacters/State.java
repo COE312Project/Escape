@@ -4,8 +4,8 @@ import Locations.Location;
 
 public interface State {
 	
-	public void prev(Context context,Location l);
-	public void next(Context context, Location l);
+	public void State1(Context context,Location A, Location B, Location C );
+	public void State2(Context context, Location A, Location B, Location C);
 	public void printStatus();
 
 }
