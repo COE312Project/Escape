@@ -8,6 +8,7 @@ public abstract class Item {
     public Boolean mustBeTaken = false;
 	public Boolean acquired = false;
 	public Boolean isException = false;
+	public Boolean isExpendable = false;
 
     public Item(String n) {
         this.name = n;

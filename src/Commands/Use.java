@@ -2,7 +2,7 @@ package Commands;
 
 public class Use implements Command{
 
-	String[] synonyms = new String[]{"use","play","access","login","eat","throw","cut","saw","pick","steal","map","check"};
+	String[] synonyms = new String[]{"use","play","access","login","eat","throw","cut","saw","pick","steal","map","check","show"};
 	String[] args;
 	GameCharacters.Player player;
 
@@ -26,7 +26,11 @@ public class Use implements Command{
 		for(Objects.Item i : this.player.inventory) {
 			if(arg.toLowerCase().contains(i.name)) {
 				if(i.verbs.contains(cmd.toLowerCase())) {
+					if(cmd.equalsIgnoreCase("throw") && arg.toLowerCase().contains("food"))
+						player.loc.commotion = true;
 					i.use(cmd);
+					if(i.isExpendable)
+						player.inventory.remove(i);
 				}
 				else
 					System.out.println("You cannot do that!");

@@ -13,7 +13,9 @@ public class Terminal {
 		System.out.println("Surveillance systems offline.");
 	}
 	
-	public void login()  throws Exception
+	Boolean check1 = false, check2 = false;
+	
+	public Boolean login()  throws Exception
 	{
 		Scanner cin = new Scanner(System.in);
 		String files = "README.txt    maintenance.sh    restore.sh";
@@ -31,16 +33,17 @@ public class Terminal {
 				case "cat README.txt": 
 					System.out.println("For software updates etc. just run the maintenance script to suspend system.\nPS: Don't forget to restore afterwards"); Sound.Player.getInstance().play("button"); break;
 				case "./maintenance.sh": 
-					maintenance(); break;
+					maintenance(); check1 = true; break;
 				case "rm restore.sh": 
-					System.out.println("File deleted."); files = files.split("    ")[0] + "    "+ files.split("    ")[1]; Sound.Player.getInstance().play("button"); break;
+					check2 = true; System.out.println("File deleted."); files = files.split("    ")[0] + "    "+ files.split("    ")[1]; Sound.Player.getInstance().play("button"); break;
 				case "exit": 
-					System.out.println(""); Sound.Player.getInstance().play("shutdown"); return;
+					System.out.println(""); Sound.Player.getInstance().play("shutdown"); return check1 && check2;
 				default:
 					System.out.println(cmd+": command not found"); Sound.Player.getInstance().play("error");
 			}
 
 		}
+		
 	}
 	
 }

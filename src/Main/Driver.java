@@ -74,8 +74,7 @@ public class Driver {
 		
 		GameClock.Clock clock = new Clock();
 		
-		Warden w = new Warden(clock, wardensOffice);
-		wardensOffice.guards.add(w);
+		
 		
 		CurrentLocation curr = new CurrentLocation(); // now curr has an identity
 		curr.loc = cell;
@@ -83,22 +82,29 @@ public class Driver {
 		Player player = new Player("Prisoner420",clock,cell);
 		cell.prisoners.add(player);
 		
+		Warden w = new Warden(clock, wardensOffice, cafeteria, player);
+		wardensOffice.guards.add(w);
+		
 		PatrollingGuard pguard = new PatrollingGuard("Jeff", clock, aLeft);
+		
+		Guard bUpGuard = new Guard("Chris",clock, bUp);
 		
 		Move move = new Move(curr, player);
 		Take take = new Take(player);
 		Use use = new Use(player);
-		Command[] cmds = new Command[] {move, take, use};
+		Inventory inventory = new Inventory(player);
+		Look look = new Look(player);
+		Command[] cmds = new Command[] {move, take, use, inventory, look};
 		ControlPanel cp = new ControlPanel(cmds);
 		
 		// Uncomment if you have 20 seconds to spare
-		// Start.start();
-	
+		//Start.start();
+
 		Scanner cin = new Scanner(System.in);
 		GameAssets.GameMap map = new GameAssets.GameMap();
 		player.inventory.add(map);
 		player.map = map;
-		
+	
 		while(true)
 		{
 			System.out.print("> ");

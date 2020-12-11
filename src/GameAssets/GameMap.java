@@ -56,6 +56,7 @@ public class GameMap extends Objects.Item{
 		super.canBeTaken();
 		verbs.add("map");
 		verbs.add("check");
+		verbs.add("show");
 		
 		locCoord.put("OuterNorth",140);
 		locCoord.put("Cell",491);

@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/GameAssets/GameMap.java=UTF-8
+encoding//src/GameCharacters/Guard.java=UTF-8
+encoding//src/GameCharacters/Warden.java=UTF-8
 encoding//src/Main/Driver.java=UTF-8
 encoding//src/Main/Start.java=UTF-8
 encoding//src/Minigame/CutWindowBar.java=UTF-8
