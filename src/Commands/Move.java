@@ -5,9 +5,9 @@ public class Move implements Command {
 
 	String[] synonyms = new String[]{"move","go","walk","proceed","advance"};
 	String[] args;
-	Location curr;
+	CurrentLocation curr;
 
-	public Move(Location l) {
+	public Move(CurrentLocation l) {
 		this.curr = l;
 	}
 
@@ -23,17 +23,17 @@ public class Move implements Command {
 	{
 		this.args = arg.split(" ");
 
-		if (arg.toLowerCase().contains("north") && curr.north != null){ 
-			curr = curr.north;	curr.enter();
+		if (arg.toLowerCase().contains("north") && curr.loc.north != null){ 
+			curr.loc = curr.loc.north;	curr.loc.enter();
 		}
-		else if(arg.toLowerCase().contains("south") && curr.south != null){
-			curr = curr.south;	curr.enter(); 
+		else if(arg.toLowerCase().contains("south") && curr.loc.south != null){
+			curr.loc = curr.loc.south;	curr.loc.enter(); 
 		}
-		else if(arg.toLowerCase().contains("east") && curr.east != null) {
-			curr = curr.east;	curr.enter(); 
+		else if(arg.toLowerCase().contains("east") && curr.loc.east != null) {
+			curr.loc = curr.loc.east;	curr.loc.enter(); 
 		}
-		else if(arg.toLowerCase().contains("west") && curr.west != null){ 
-			curr = curr.west;	curr.enter(); 
+		else if(arg.toLowerCase().contains("west") && curr.loc.west != null){ 
+			curr.loc = curr.loc.west;	curr.loc.enter(); 
 		}
 		else
 			System.out.println("You cannot go there!"); 

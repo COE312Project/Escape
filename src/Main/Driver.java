@@ -71,8 +71,15 @@ public class Driver {
 		Warden w = new Warden(new Clock(), wardensOffice);
 		wardensOffice.guards.add(w);
 		
+		CurrentLocation curr = new CurrentLocation(); // now curr has an identity
+		curr.loc = cell;
+	
+		// This proves that the hw issue is solved:
+/*		Commands.Move move = new Commands.Move(curr);
+		move.execute("go south");
+		System.out.println(curr.loc); */
 		
-
+		
 		// Uncomment if you have 20 seconds to spare
 		//Start.start();
 
