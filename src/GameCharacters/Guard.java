@@ -19,12 +19,14 @@ public class Guard extends NPC implements Runnable{
 			System.out.print("YOU ARE CAUGHT!!! ");
 			System.exit(0);
 		}
+		else
+			System.out.print("");
 	}
 	
 	public void run() 
 	{
 		while(true) {
-			this.defaultActivities();
+			defaultActivities();
 		}
 	}
 

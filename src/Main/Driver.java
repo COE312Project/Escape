@@ -88,7 +88,8 @@ public class Driver {
 		Command[] cmds = new Command[] {move, take, use};
 		ControlPanel cp = new ControlPanel(cmds);
 	
-	
+		
+
 		
 		// This proves that the hw issue is solved:
 /*		Move move = new Move(curr);
