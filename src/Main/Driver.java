@@ -15,7 +15,7 @@ public class Driver {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		Cell cell = new Cell(null); // send player instance
+		Cell cell = new Cell(); // send player instance
 
 		ConstructionZone constrZone = new ConstructionZone();
 
@@ -82,11 +82,12 @@ public class Driver {
 		Player player = new Player("Prisoner420",clock,cell);
 		cell.prisoners.add(player);
 		
-		Move move = new Move(curr);
+		Move move = new Move(curr, player);
 		Take take = new Take(player);
 		Use use = new Use(player);
 		Command[] cmds = new Command[] {move, take, use};
 		ControlPanel cp = new ControlPanel(cmds);
+	
 	
 		
 		// This proves that the hw issue is solved:
