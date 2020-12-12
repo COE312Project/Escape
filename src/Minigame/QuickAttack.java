@@ -23,8 +23,10 @@ public class QuickAttack {
 			System.out.print("");
 			if(Math.abs(currAcc.x) > 15 || Math.abs(currAcc.y) > 15 || Math.abs(currAcc.z) > 15)
 			{
-				System.out.println("\nPikachu performed Quick Attack!\nIt was super effective!");
 				Sound.Player.getInstance().play("hit");
+				System.out.println("\nYou performed a quick attack!\n"
+						+ "While the guard is falling unconcius,"
+						+ "\nYou lay him down quietly as to not alarm the other guards.");
 				w.t.interrupt();
 				return;
 			}

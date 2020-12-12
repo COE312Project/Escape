@@ -32,16 +32,14 @@ public class Watch implements java.lang.Runnable {
 				return;
 			}
 		}
-		System.out.println("You were caught!\n\\t\\t\\t<< GAME OVER >>");
-		System.exit(0);
+		System.out.println("\nThe guard hits you hard on the face.\nYou go down with your nose bleeding and you start seeing blurry double visions.\n"
+				+ "You think of the last good time you had...\nSneaking out of the Bank of America with your heist crew with your share of the 10 million dollars\n"
+				+ "Your vision eventually fades into darkness.");
 		try {
-			Sound.Player.getInstance().play("groan");
-			Sound.Player.getInstance().play("game_over");
-			Thread.sleep(3000);	//need this coz system.exit happens immediately after this and no sound will be played
-		} catch (Exception e) {
+			Main.End.end("dead");
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.exit(0);
 	}
 	
 }

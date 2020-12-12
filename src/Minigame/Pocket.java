@@ -32,14 +32,7 @@ public class Pocket {
 			if (curGyro.x > 2.0 || curGyro.y > 2.0 ||  curGyro.z > 2.0) {
 				System.out.println("\n\t\t\t\t\t\t\t\tYou alerted the guard!");
 				System.out.print("\n[Guard]:\n❝    What the hell do you think you're doing with your hand in my pocket, huh ?! ❞\n");
-				System.out.println("\t\t\t<< GAME OVER >>");
-				try {
-					Sound.Player.getInstance().play("game_over");
-					Thread.sleep(3000);	//need this coz system.exit happens immediately after this and no sound will be played
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				System.exit(0);
+				Main.End.end("caught");
 				return;
 			}
 			

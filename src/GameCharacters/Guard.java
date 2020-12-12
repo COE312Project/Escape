@@ -17,10 +17,7 @@ public class Guard extends NPC implements Runnable{
 		if((this.time >= 19 || this.time <= 6) && this.loc != null && !this.loc.prisoners.isEmpty()) 
 		{
 			System.out.print("\n[Night Guard]:\n❝ You there! What are you doing outside your cell ?! ❞\n");
-			System.out.println("\t\t\t<< GAME OVER >>");
-			Sound.Player.getInstance().play("game_over");
-			Thread.sleep(3000);	//need this coz system.exit happens immediately after this and no sound will be played
-			System.exit(0);
+			Main.End.end("caught");
 		}
 		else
 			System.out.print("");
