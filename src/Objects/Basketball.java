@@ -2,14 +2,14 @@ package Objects;
 
 public class Basketball extends Item{
 
-	Minigame.Basketball bb;
+	Minigames.Basketball bb;
 	public Basketball() {
 		super("basketball");
 		verbs.add("play");
 	}
 	
 	public void use(String verb) {
-		bb = new Minigame.Basketball();
+		bb = new Minigames.Basketball();
 		this.bb.play();
 	}
 }

@@ -62,13 +62,13 @@ public class GameMap extends Objects.Item{
 		locCoord.put("Cell",491);
 		locCoord.put("CorridorNorth-West",871);
 		locCoord.put("CorridorNorth-East",916);
-		locCoord.put("CorridorEast-North",1511);
-		locCoord.put("CorridorEast-South",2357);
+		locCoord.put("CorridorWest-North",1511);
+		locCoord.put("CorridorWest-South",2357);
 		locCoord.put("Cafeteria",1532);
 		locCoord.put("WardensOffice",2378);
 		locCoord.put("Yard",1945);
-		locCoord.put("CorridorWest-North",1588);
-		locCoord.put("CorridorWest-South",2434);
+		locCoord.put("CorridorEast-North",1588);
+		locCoord.put("CorridorEast-South",2434);
 		locCoord.put("OuterWest",1882);
 		locCoord.put("OuterEast",1969);
 		locCoord.put("CorridorSouth-West",2939);

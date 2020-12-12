@@ -2,20 +2,23 @@ package Objects;
 
 public class YardKey extends Item {
 
-	Minigame.Pocket p;
+	Minigames.Pocket p;
+	Locations.Yard yard;
 
-	public YardKey() {
+	public YardKey(Locations.Yard yard) {
 		super("key");
 		verbs.add("steal");
 		verbs.add("take");
 		super.mustBeTaken = true;
 		super.isException = true;
+		
+		this.yard = yard;
 	}
 
 	public void use(String verb) {
 
 		if(!acquired) {
-			p = new Minigame.Pocket();
+			p = new Minigames.Pocket();
 
 			try {
 				this.p.pick();
@@ -26,7 +29,8 @@ public class YardKey extends Item {
 			super.acquired = true;
 		}
 		else {
-			System.out.println("You unlocked the yard entrance.");
+			this.yard.isLocked = false;
+			System.out.println("\n << You unlocked the yard entrance. >>\n");
 		}
 	}
 

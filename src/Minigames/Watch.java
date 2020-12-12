@@ -1,4 +1,4 @@
-package Minigame;
+package Minigames;
 
 public class Watch implements java.lang.Runnable {
 

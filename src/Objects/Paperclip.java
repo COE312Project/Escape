@@ -2,7 +2,7 @@ package Objects;
 
 public class Paperclip extends Item{
 
-	Minigame.LockPick lp;
+	Minigames.LockPick lp;
 	
 	public Paperclip() {
 		super("paperclip");
@@ -11,7 +11,7 @@ public class Paperclip extends Item{
 	}
 
 	public void use(String verb) {
-		lp = new Minigame.LockPick();
+		lp = new Minigames.LockPick();
 
 		try {
 			this.lp.pick();

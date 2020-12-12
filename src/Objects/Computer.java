@@ -2,7 +2,7 @@ package Objects;
 
 public class Computer extends Item{
 
-	Minigame.Terminal tm = new Minigame.Terminal();
+	Minigames.Terminal tm = new Minigames.Terminal();
 	public Boolean camDisabled = false;
 
 	public Computer() {

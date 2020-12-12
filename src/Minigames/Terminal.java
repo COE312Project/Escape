@@ -1,4 +1,4 @@
-package Minigame;
+package Minigames;
 
 
 import java.util.Scanner;

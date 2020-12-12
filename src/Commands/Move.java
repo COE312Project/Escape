@@ -23,8 +23,8 @@ public class Move implements Command {
 	public void execute(String arg)
 	{
 		this.args = arg.split(" ");
-
 		if (arg.toLowerCase().contains("north") && curr.loc.north != null){ 
+			if(curr.loc.north.isLocked) {System.out.print("\n[Guard]:\n\t❝  You there! Get away from the construction zone! ❞\n"); return;	}
 			curr.loc.prisoners.remove(player);
 			curr.loc = curr.loc.north;	
 			player.loc = curr.loc; 
@@ -32,7 +32,6 @@ public class Move implements Command {
 			curr.loc.enter();
 		}
 		else if(arg.toLowerCase().contains("south") && curr.loc.south != null){
-
 			curr.loc.prisoners.remove(player);
 			curr.loc = curr.loc.south;	
 			player.loc = curr.loc; 
@@ -47,6 +46,7 @@ public class Move implements Command {
 			curr.loc.enter(); 
 		}
 		else if(arg.toLowerCase().contains("west") && curr.loc.west != null){ 
+			if(curr.loc.west.isLocked) {System.out.println("\n << " + curr.loc.west.name + " is locked! Do you have a key? >>\n"); return;	}
 			curr.loc.prisoners.remove(player);
 			curr.loc = curr.loc.west;
 			player.loc = curr.loc; 
@@ -54,7 +54,7 @@ public class Move implements Command {
 			curr.loc.enter(); 
 		}
 		else
-			System.out.println("You cannot go there!"); 
+			System.out.println("\n << You cannot go there! >>\n"); 
 		
 		if(player.map != null)
 			player.map.setLocation(curr.loc.name);

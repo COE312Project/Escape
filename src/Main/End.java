@@ -3,15 +3,15 @@ package Main;
 public class End {
 	
 	static String pretitle_caught = new String( 
-
-			"\t    █▄█ █▀█ █ █   █ █ █ █▀▀ █▀█ █▀▀   █▀▀ ▄▀█ █ █ █▀▀ █ █ ▀█▀ ▀█\n" + 
-			"\t     █  █▄█ █▄█   ▀▄▀▄▀ ██▄ █▀▄ ██▄   █▄▄ █▀█ █▄█ █▄█ █▀█  █   ▄\n"
+			"\n" +
+			"\t\t\t    █▄█ █▀█ █ █   █ █ █ █▀▀ █▀█ █▀▀   █▀▀ ▄▀█ █ █ █▀▀ █ █ ▀█▀ ▀█\n" + 
+			"\t\t\t     █  █▄█ █▄█   ▀▄▀▄▀ ██▄ █▀▄ ██▄   █▄▄ █▀█ █▄█ █▄█ █▀█  █   ▄\n"
 	);
 
 	static String pretitle_dead = new String( 
-
-			"\t    █▄█ █▀█ █░█   █▀▄ █ █▀▀ █▀▄ ▀█ \n" + 
-			"\t    ░█░ █▄█ █▄█   █▄▀ █ ██▄ █▄▀  ▄\n"
+			"\n" +
+			"\t\t\t    █▄█ █▀█ █ █   █▀▄ █ █▀▀ █▀▄ ▀█\n" + 
+			"\t\t\t     █  █▄█ █▄█   █▄▀ █ ██▄ █▄▀  ▄\n"
 	);
 	
 	static String[] title = new String[] {
@@ -28,7 +28,7 @@ public class End {
 	};
 
 	public static void end(String ending) throws InterruptedException {
-		
+		Thread.sleep(2000);
 		if(ending.equals("caught"))
 		{
 			try {

@@ -12,7 +12,7 @@ public class Location {
      public ArrayList<Prisoner> prisoners = new ArrayList<GameCharacters.Prisoner>();
      public ArrayList<Objects.Item> items = new ArrayList<Objects.Item>();
      public Location north, south, east, west;
-     
+     public Boolean isLocked = false;
      public Boolean commotion = false;
      
      public Location()

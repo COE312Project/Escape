@@ -75,26 +75,37 @@ public class Driver {
 		GameClock.Clock clock = new Clock();
 		
 		
-		
 		CurrentLocation curr = new CurrentLocation(); // now curr has an identity
 		curr.loc = cell;
 		
 		Player player = new Player("Prisoner420",clock,cell);
 		cell.prisoners.add(player);
 		
-		Warden w = new Warden(clock, wardensOffice, cafeteria, player);
+		Guard yardGuard = new Guard("Bob",clock,yard,yard);
+		yard.guards.add(yardGuard);
+		
+		Warden w = new Warden(clock, wardensOffice, cafeteria, player, yard);
 		wardensOffice.guards.add(w);
 		
-		PatrollingGuard pguard = new PatrollingGuard("Jeff", clock, aLeft);
+		PatrollingGuard pguard = new PatrollingGuard("Jeff", clock, aLeft, yard);
 		
-		Guard bUpGuard = new Guard("Chris",clock, bUp);
+		Guard bUpGuard = new Guard("Chris",clock, bUp, yard);
+		bUp.guards.add(bUpGuard);
+		
+		Guard dLeftGuard = new Guard("Dennis",clock, dLeft, yard);
+		dLeft.guards.add(dLeftGuard);
+		
+		Guard dRightGuard = new Guard("Graham",clock, dRight, yard);
+		dRight.guards.add(dRightGuard);
 		
 		Move move = new Move(curr, player);
 		Take take = new Take(player);
 		Use use = new Use(player);
 		Inventory inventory = new Inventory(player);
 		Look look = new Look(player);
-		Command[] cmds = new Command[] {move, take, use, inventory, look};
+		Time time = new Time(player);
+		
+		Command[] cmds = new Command[] {move, take, use, inventory, look, time};
 		ControlPanel cp = new ControlPanel(cmds);
 		
 		// Uncomment if you have 20 seconds to spare

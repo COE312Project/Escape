@@ -2,7 +2,7 @@ package Objects;
 
 public class Hacksaw extends Item {
 
-	Minigame.CutWindowBar cwb;
+	Minigames.CutWindowBar cwb;
 	
 	public Hacksaw() {
 		super("hacksaw");
@@ -12,7 +12,7 @@ public class Hacksaw extends Item {
 	}
 	
 	public void use(String verb) {
-		cwb = new Minigame.CutWindowBar();
+		cwb = new Minigames.CutWindowBar();
 		try {
 			this.cwb.cut();
 		} catch (Exception e) {

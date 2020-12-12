@@ -9,8 +9,10 @@ public class PatrollingGuard extends Guard{
 	Patrol patrol;
 	Boolean moved = false;
 
-	public PatrollingGuard(String n, Subject s, Location l) {
-		super(n, s, l);
+	public PatrollingGuard(String n, Subject s, Location l, Locations.Yard yard) {
+		super(n, s, l, yard);
+		super.inventory.remove(super.key); // patrolling guard 
+		super.loc.items.remove(super.key); // romve from location as well
 		patrol = new Patrol();
 		ctxt = new Context(this, patrol);
 	}
@@ -28,7 +30,7 @@ public class PatrollingGuard extends Guard{
 
 		if((this.time >= 19 || this.time <= 6) && this.loc != null && !this.loc.prisoners.isEmpty()) 
 		{
-			System.out.print("\n[Patrolling Guard]:\n❝    You there! What are you doing outside your cell ?! ❞\n");
+			System.out.print("\n[Patrolling Guard]:\n\t❝  You there! What are you doing outside your cell ?! ❞\n");
 			Main.End.end("caught");
 		}
 		else
