@@ -104,7 +104,11 @@ public class Driver {
 		GameAssets.GameMap map = new GameAssets.GameMap();
 		player.inventory.add(map);
 		player.map = map;
-	
+		
+		// for Start
+		// if we make it "press enter to continue" this is fine
+		// cin.nextLine();	//maybe we should make the Start not say "enter any key" :( I wasted 1 hr 
+		
 		while(true)
 		{
 			System.out.print("> ");

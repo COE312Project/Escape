@@ -15,7 +15,7 @@ public class PatrollingGuard extends Guard{
 		ctxt = new Context(this, patrol);
 	}
 
-	public void defaultActivities() {
+	public void defaultActivities() throws Exception {
 		if(time % 2 == 0) {
 			if(!moved) {
 				this.ctxt.nextState();
@@ -28,7 +28,10 @@ public class PatrollingGuard extends Guard{
 
 		if((this.time >= 19 || this.time <= 6) && this.loc != null && !this.loc.prisoners.isEmpty()) 
 		{
-			System.out.print("\nYou there! What are you doing outside your cell ?!\n");
+			System.out.print("\n[Patrolling Guard]:\nYou there! What are you doing outside your cell ?!\n");
+			System.out.println("\t\t\t<< GAME OVER >>");
+			Sound.Player.getInstance().play("game_over");
+			Thread.sleep(3000);	//need this coz system.exit happens immediately after this and no sound will be played
 			System.exit(0);
 		}
 		else

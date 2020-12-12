@@ -32,9 +32,12 @@ public class Watch implements java.lang.Runnable {
 				return;
 			}
 		}
-		System.out.println("You were caught!\n----------GAME OVER----------");
+		System.out.println("You were caught!\n\\t\\t\\t<< GAME OVER >>");
+		System.exit(0);
 		try {
 			Sound.Player.getInstance().play("groan");
+			Sound.Player.getInstance().play("game_over");
+			Thread.sleep(3000);	//need this coz system.exit happens immediately after this and no sound will be played
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -20,5 +20,5 @@ public abstract class NPC extends Character
 		this.dB = db;
 	}
     
-	public abstract void defaultActivities();
+	public abstract void defaultActivities() throws Exception;
 }

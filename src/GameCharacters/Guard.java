@@ -12,12 +12,14 @@ public class Guard extends NPC implements Runnable{
 		t.start();
 	}
 	
-	public void defaultActivities() {
+	public void defaultActivities() throws Exception {
 		// all npc prisoners automatically go to cell, so if there is any prisoner in the same loc as guard, its the player
 		if((this.time >= 19 || this.time <= 6) && this.loc != null && !this.loc.prisoners.isEmpty()) 
 		{
-			System.out.print("\n❝ You there! What are you doing outside your cell ?! ❞\n");
+			System.out.print("\n[Night Guard]:\n❝ You there! What are you doing outside your cell ?! ❞\n");
 			System.out.println("\t\t\t<< GAME OVER >>");
+			Sound.Player.getInstance().play("game_over");
+			Thread.sleep(3000);	//need this coz system.exit happens immediately after this and no sound will be played
 			System.exit(0);
 		}
 		else
@@ -30,7 +32,11 @@ public class Guard extends NPC implements Runnable{
 			Thread.sleep(2000); // for allowing ctxt to init
 		} catch (InterruptedException e) {	}
 		while(true) {
-			defaultActivities();
+			try {
+				defaultActivities();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

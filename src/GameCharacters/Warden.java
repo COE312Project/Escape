@@ -16,13 +16,15 @@ public class Warden extends Guard{
 		this.player = player;
 	}
 
-	public void defaultActivities() {
+	public void defaultActivities() throws Exception {
 		if(this.loc.name == "WardensOffice" && !this.loc.prisoners.isEmpty()) {
 			try {
 				Thread.sleep(200); // so that the location title gets printed before warden freaks out
 			} catch (InterruptedException e) {}
-			System.out.println("\n❝ Hey! What are you doing in here?! That's it, solitary confinement for you! ❞");
+			System.out.println("\n[Warden]:\n❝ Hey! What are you doing in here?! That's it, solitary confinement for you! ❞");
 			System.out.println("\t\t\t<< GAME OVER >>");
+			Sound.Player.getInstance().play("game_over");
+			Thread.sleep(3000);	// need this coz system.exit happens immediately after this and no sound will be played
 			System.exit(0);
 		}
 		else if(this.cafe.commotion)
@@ -43,6 +45,7 @@ public class Warden extends Guard{
 		else if((this.time >= 19 || this.time <= 6) && !this.office.computer.camDisabled && !this.player.loc.name.equals("Cell")) {
 			System.out.println("\n[Through the PA]:\n❝ Aha! You thought I wouldn't see you? Nothing gets past me. Guards, detain him!❞ ");
 			System.out.println("\t\t\t<< GAME OVER >>");
+			Sound.Player.getInstance().play("game_over");
 			System.exit(0);
 		}
 		else
