@@ -1,5 +1,7 @@
 package Main;
 
+import java.util.Scanner;
+
 public class Start {
 
 	static String[] title = new String[] {
@@ -36,6 +38,7 @@ public class Start {
 		System.out.println(subtitle);
 		Thread.sleep(5000);
 		System.out.println("\n\t\t\t\t\t\tPRESS [ENTER "+"↵"+"] TO START");
+		(new Scanner(System.in)).nextLine();
 
 	}
 

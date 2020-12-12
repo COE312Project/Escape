@@ -19,6 +19,7 @@ public class Warden extends Guard{
 		super.loc.items.remove(super.key);
 		super.dialogs.clear();
 		super.dialogs.add("I won the Best Prison Warden Award in 2016, 2017 and 2019!");
+		nB = new WardenNight();
 		this.desc = "The warden looks super angry!";
 		this.office = w;
 		this.cafe = cafe;
@@ -26,7 +27,7 @@ public class Warden extends Guard{
 		this.yardGuard = super.yard.guards.get(0);
 	}
 
-	public void defaultActivities() throws Exception {
+	public Boolean defaultActivities() throws Exception {
 		if(this.loc.name == "WardensOffice" && !this.loc.prisoners.isEmpty()) {
 			try {
 				Thread.sleep(200); // so that the location title gets printed before warden freaks out
@@ -41,7 +42,7 @@ public class Warden extends Guard{
 			this.loc = cafe;
 			cafe.guards.add(this);
 			try {
-				Thread.sleep(120000);
+				Thread.sleep(60000);
 			} catch (InterruptedException e) {}
 
 			this.loc.guards.remove(this);
@@ -51,14 +52,14 @@ public class Warden extends Guard{
 		
 		}
 		if((this.time >= 19 || this.time <= 6) && !this.office.computer.camDisabled && !this.player.loc.name.equals("Cell")) {
-			System.out.println("\n[Through the PA]:\n\t❝   Aha! You thought I wouldn't see you? Nothing gets past me. Guards, detain him! ❞\n");
-			Main.End.end("caught");
+			nB.doTasks("Through the PA");
 		}
 
 		if(this.time == 19 && doNightJobs)
 		{
 			//System.out.println("im doing my night jobs");
 			super.yard.isLocked = true; // lock at night
+			cafe.isLocked = true;
 			cafe.west.north.isLocked = true; // lock cell (actually locks the north corridor)
 			super.yard.north.isLocked = false; // constr zone is accessible at night
 			Thread.sleep(200);
@@ -71,6 +72,7 @@ public class Warden extends Guard{
 		if(time == 7 && doDayJobs) //
 		{
 			super.yard.isLocked = false; // normal unlock in morning
+			cafe.isLocked = false;
 			super.yard.north.isLocked = true; // constr zone is inaccessible during the day
 			cafe.west.north.isLocked = false; // unlock cell
 			if(cafe.items.isEmpty())
@@ -83,5 +85,7 @@ public class Warden extends Guard{
 		}
 		else 
 			System.out.print("");
+		
+		return true;
 	}
 }

@@ -10,6 +10,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
+import Sound.Player;
+
 import java.io.*;
 
 public class TCP_Client implements Runnable {
@@ -22,6 +24,9 @@ public class TCP_Client implements Runnable {
 	// need the port 
 	int port = Main.Driver.PORT;
 	public coord accel, gyro, rot;
+	
+	private static TCP_Client instance;
+	
 	public TCP_Client(){
 
 		// no need to set the ip address and the port of the 
@@ -37,6 +42,15 @@ public class TCP_Client implements Runnable {
 		t.start();
 	}
 
+	public static synchronized TCP_Client getInstance()
+	{
+		if(instance == null)
+		{
+			instance = new TCP_Client();
+		}
+		return instance;
+	}
+	
 	public void run() {
 		try {
 			Socket socket = new Socket(this.host, this.port);

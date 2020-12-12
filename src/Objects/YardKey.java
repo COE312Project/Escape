@@ -30,7 +30,7 @@ public class YardKey extends Item {
 				System.out.println("\n << You unlocked the yard entrance. >>\n");
 			}
 			else
-				System.out.println("\n Why?\n");
+				System.out.println("\n...why?\n");
 		}
 	}
 

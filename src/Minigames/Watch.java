@@ -13,7 +13,6 @@ public class Watch implements java.lang.Runnable {
 
 	}
 
-	@Override
 	public void run() {
 		this.runTimer(this.secs);
 	}

@@ -7,6 +7,8 @@ public class Guard extends Character implements Runnable, NPC{
 	Thread t;
 	Locations.Yard yard;
 	Objects.YardKey key;
+
+	NightBehaviour nB = new NightGuard();
 	
 	public Guard(String n, GameClock.Subject s, Locations.Location l, Locations.Yard yard) {
 		super(n,s,l);
@@ -24,15 +26,16 @@ public class Guard extends Character implements Runnable, NPC{
 		t.start();
 	}
 	
-	public void defaultActivities() throws Exception {
+	public Boolean defaultActivities() throws Exception {
 		// all npc prisoners automatically go to cell, so if there is any prisoner in the same loc as guard, its the player
 		if((this.time >= 19 || this.time <= 6) && this.loc != null && !this.loc.prisoners.isEmpty()) 
 		{
-			System.out.print("\n[Night Guard]:\n\t❝   You there! What are you doing outside your cell ?! ❞\n");
-			Main.End.end("caught");
+			return nB.doTasks("Night Guard");
 		}
 		else
 			System.out.print("");
+		
+		return true;
 	}
 	
 	public void run() 
@@ -42,7 +45,8 @@ public class Guard extends Character implements Runnable, NPC{
 		} catch (InterruptedException e) {	}
 		while(true) {
 			try {
-				defaultActivities();
+				if(!defaultActivities())
+					break;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

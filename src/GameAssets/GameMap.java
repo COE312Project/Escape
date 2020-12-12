@@ -58,7 +58,7 @@ public class GameMap extends Objects.Item{
 		verbs.add("check");
 		verbs.add("show");
 		
-		locCoord.put("OuterNorth",140);
+		locCoord.put("Outer-North",140);
 		locCoord.put("Cell",491);
 		locCoord.put("CorridorNorth-West",871);
 		locCoord.put("CorridorNorth-East",916);
@@ -69,11 +69,11 @@ public class GameMap extends Objects.Item{
 		locCoord.put("Yard",1945);
 		locCoord.put("CorridorEast-North",1588);
 		locCoord.put("CorridorEast-South",2434);
-		locCoord.put("OuterWest",1882);
-		locCoord.put("OuterEast",1969);
+		locCoord.put("Outer-West",1882);
+		locCoord.put("Outer-East",1969);
 		locCoord.put("CorridorSouth-West",2939);
 		locCoord.put("CorridorSouth-East",2984);
-		locCoord.put("OuterSouth",3336);	
+		locCoord.put("Outer-South",3336);	
 
 		this.curLoc = locCoord.get("Cell"); // start in cell
 	}

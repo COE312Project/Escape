@@ -8,7 +8,7 @@ public class PatrollingGuard extends Guard{
 	Context ctxt;
 	Patrol patrol;
 	Boolean moved = false;
-
+	
 	public PatrollingGuard(String n, Subject s, Location l, Locations.Yard yard) {
 		super(n, s, l, yard);
 		super.inventory.remove(super.key); // patrolling guard 
@@ -21,7 +21,7 @@ public class PatrollingGuard extends Guard{
 				+ "Strangely, he also does not have the same key with the large 'Y' on it. \n";
 	}
 
-	public void defaultActivities() throws Exception {
+	public Boolean defaultActivities() throws Exception {
 		if(time % 2 == 0) {
 			if(!moved) {
 				this.ctxt.nextState();
@@ -34,11 +34,12 @@ public class PatrollingGuard extends Guard{
 
 		if((this.time >= 19 || this.time <= 6) && this.loc != null && !this.loc.prisoners.isEmpty()) 
 		{
-			System.out.print("\n[Patrolling Guard]:\n\t❝  You there! What are you doing outside your cell ?! ❞\n");
-			Main.End.end("caught");
+			return nB.doTasks("Patrolling Guard");
 		}
 		else
 			System.out.print("");
+		
+		return true;
 	}
 
 }

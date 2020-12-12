@@ -65,15 +65,15 @@ public class FriendlyPrisoner extends Prisoner implements Runnable, NPC
 	}
 
 
-	public void defaultActivities() {
-		if(this.time == 19  && this.loc != null) {
+	public Boolean defaultActivities() {
+		if(this.time == 18  && this.loc != null) {
 			// remove from Yard's list of prisoners
 			this.loc.prisoners.remove(this);
 			this.loc = null;
 		}
-		if (this.time == 7 && this.loc != yard) {
+		if (this.time == 8 && this.loc != yard) {
 			// add to Yard's list of prisoners
-			this.loc.prisoners.add(this);
+			yard.prisoners.add(this);
 			this.loc = yard;
 		}
 		if(this.yard.bb.won && nextDialog == 0) {
@@ -86,6 +86,8 @@ public class FriendlyPrisoner extends Prisoner implements Runnable, NPC
 			nextDialog++;
 		else
 			System.out.print("");
+		
+		return true;
 	}
 
 	public void run()

@@ -26,6 +26,7 @@ public class Move implements Command {
 	{
 		this.args = arg.split(" ");
 		if (arg.toLowerCase().contains("north") && curr.loc.north != null){ 
+			if(curr.loc.north.isLocked && curr.loc.name.equals("Cell")) { System.out.println("\n\t<< Maybe if you didn't eat so much, you'd fit through those bars! >>\n"); return;}
 			if(curr.loc.north.isLocked) {System.out.print("\n[Guard]:\n\t❝  You there! Get away from the construction zone! ❞\n"); return;	}
 			curr.loc.prisoners.remove(player);
 			curr.loc = curr.loc.north;	

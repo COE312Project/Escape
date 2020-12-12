@@ -3,11 +3,11 @@ package Locations;
 public class WardensOffice extends Location{
 
 	public Objects.Computer computer = new Objects.Computer();
-	public WardensOffice()
+	public WardensOffice(Location aLeft)
 	{
 		super();
 		this.name = "WardensOffice";
-		this.items.add(new Objects.Paperclip());
+		this.items.add(new Objects.Paperclip(aLeft));
 		this.items.add(computer);
 		this.desc = " The warden is at the cafeteria handling the commotion you started. \n"
 				+ " You sneak in quietly avoiding any attention to yourself. \n"

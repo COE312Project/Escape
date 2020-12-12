@@ -7,8 +7,9 @@ public class Cell extends Location {
 	{
 		super();
 		this.name = "Cell";
-		this.desc = "\nBehind you is a window that has worn out bars and on your left is a dusty bed. ";
-		this.sDesc = "\nThe door to the South leads to the North corridor. ";
+		this.desc = "\n On the North wall is a window, your only connection to the outside world."
+				+ "\n The solid metal bars on it made you wish you'd spent more time in the gym!";
+		this.sDesc = "\n The door to the South leads to the North corridor. ";
 	}
 	
 }

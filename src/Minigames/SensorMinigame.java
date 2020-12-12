@@ -1,21 +1,24 @@
 package Minigames;
 
+import java.util.Scanner;
+
 import Sensor.TCP_Client;
 
 public abstract class SensorMinigame {
 
 	public TCP_Client tcp;
 	protected final void setupTCP() {
-		this.tcp = new TCP_Client();
+		this.tcp = TCP_Client.getInstance();
 	}
 	protected final void printInstructions() {
-		System.out.println("\n\t\t<< Get your phone ready! >>");
+		System.out.println("\n\t\t<< HIT ENTER WHEN YOU'RE READY >>");
+		//(new Scanner(System.in)).nextLine();
 	}
 	
 	public final Boolean play()
 	{
-		setupTCP();
 		printInstructions();
+		setupTCP();
 		return startGame();
 	}
 	

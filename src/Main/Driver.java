@@ -14,14 +14,20 @@ import Locations.*;
 public class Driver {
 
 	//need to only pass these values here
-	public static final String IP = "192.168.1.101";
+	public static final String IP = "192.168.1.112";
 	public static final int PORT = 23232;
 
 	public static void main(String[] args) throws InterruptedException {
 
 		Cell cell = new Cell(); // send player instance
 
-		ConstructionZone constrZone = new ConstructionZone();
+		OuterNorth outerN = new OuterNorth();
+		
+		Sewer sewer = new Sewer();
+		
+		outerN.setNeighbors(null,sewer,null,null);
+		
+		ConstructionZone constrZone = new ConstructionZone(outerN);
 
 		Yard yard = new Yard(new ArrayList<Prisoner>(), new ArrayList<Guard>(), constrZone);
 
@@ -43,10 +49,11 @@ public class Driver {
 
 		Cafeteria cafeteria = new Cafeteria();
 
-		WardensOffice wardensOffice = new WardensOffice(); // send Warden instance
+		WardensOffice wardensOffice = new WardensOffice(aLeft); // send Warden instance
+		
 
 
-		cell.setNeighbors(null, aLeft, null, null);
+		cell.setNeighbors(outerN, aLeft, null, null);
 
 		yard.setNeighbors(constrZone, null, cUp, null);
 
@@ -82,7 +89,7 @@ public class Driver {
 		cell.prisoners.add(player);
 		
 		Guard yardGuard = new Guard("guard",clock,yard,yard);
-		yard.guards.add(yardGuard);
+		yard.guards.add(yardGuard); 
 		
 		Warden w = new Warden(clock, wardensOffice, cafeteria, player, yard);
 		wardensOffice.guards.add(w);
@@ -90,13 +97,13 @@ public class Driver {
 		PatrollingGuard pguard = new PatrollingGuard("guard", clock, aLeft, yard);
 				
 		Guard bUpGuard = new Guard("guard",clock, bUp, yard);
-		bUp.guards.add(bUpGuard);
+		bUp.guards.add(bUpGuard); 
 		
 		Guard dLeftGuard = new Guard("guard",clock, dLeft, yard);
-		dLeft.guards.add(dLeftGuard);
+		dLeft.guards.add(dLeftGuard); 
 		
 		Guard dRightGuard = new Guard("guard",clock, dRight, yard);
-		dRight.guards.add(dRightGuard);
+		dRight.guards.add(dRightGuard); 
 		
 		GameAssets.GameMap map = new GameAssets.GameMap();
 		
@@ -124,10 +131,11 @@ public class Driver {
 		Bed bed = new Bed();
 		cell.items.add(bed);
 		
+		End.end("win");
+		
 		// for Start
 		// if we make it "press enter to continue" this is fine
-		// cin.nextLine();	//maybe we should make the Start not say "enter any key" :( I wasted 1 hr 
-		
+		//maybe we should make the Start not say "enter any key" :( I wasted 1 hr 
 		while(true)
 		{
 			System.out.print("> ");

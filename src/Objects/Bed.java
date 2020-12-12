@@ -7,7 +7,7 @@ public class Bed extends Item{
 	public Bed() {
 		super("bed", "Cell");
 		verbs.add("sleep");
-		this.desc = "\nOn your left is a dusty bed. \n";
+		this.desc = "\n On your left is a dusty bed that looks like it's older than you. \n";
 	}
 
 	public void use(String verb) {
