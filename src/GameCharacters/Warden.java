@@ -21,7 +21,7 @@ public class Warden extends Guard{
 			try {
 				Thread.sleep(200); // so that the location title gets printed before warden freaks out
 			} catch (InterruptedException e) {}
-			System.out.println("\n[Warden]:\n❝ Hey! What are you doing in here?! That's it, solitary confinement for you! ❞");
+			System.out.println("\n[Warden]:\n❝    Hey! What are you doing in here?! That's it, solitary confinement for you! ❞\n");
 			Main.End.end("caught");
 		}
 		else if(this.cafe.commotion)

@@ -28,7 +28,7 @@ public class PatrollingGuard extends Guard{
 
 		if((this.time >= 19 || this.time <= 6) && this.loc != null && !this.loc.prisoners.isEmpty()) 
 		{
-			System.out.print("\n[Patrolling Guard]:\nYou there! What are you doing outside your cell ?!\n");
+			System.out.print("\n[Patrolling Guard]:\n❝    You there! What are you doing outside your cell ?! ❞\n");
 			Main.End.end("caught");
 		}
 		else
