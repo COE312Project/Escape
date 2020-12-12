@@ -4,16 +4,12 @@ import Sensor.TCP_Client;
 import Sensor.coord;
 
 
-public class Pocket {
+public class Pocket extends SensorMinigame {
 
-	TCP_Client tcp;
 	int progress = 0;
 
-	public Pocket() {
-		this.tcp = new TCP_Client();
-	}
-
-	public void pick() throws InterruptedException
+	
+	public Boolean startGame()
 	{
 		System.out.println("           ___..__\r\n" + 
 				"  __..--\"\"\" ._ __.'\r\n" + 
@@ -32,22 +28,30 @@ public class Pocket {
 			if (curGyro.x > 2.0 || curGyro.y > 2.0 ||  curGyro.z > 2.0) {
 				System.out.println("\n\t\t\t\t\t\t\t\tYou alerted the guard!");
 				System.out.print("\n[Guard]:\n❝    What the hell do you think you're doing with your hand in my pocket, huh ?! ❞\n");
-				Main.End.end("caught");
-				return;
+				try {
+					Main.End.end("caught");
+				} catch (InterruptedException e) {}
+				return false;
 			}
 			
 			if ((curGyro.x > 0.5 && curGyro.x < 2.0) || (curGyro.y > 0.5 && curGyro.y < 2.0) || (curGyro.z > 0.5 && curGyro.z < 2.0))
 			{
 				progress++;
 				System.out.print("##");
-				Thread.sleep(100);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {}
 				if(progress == 50) {
 					
 					System.out.println("\n\t\t\t\t\t\t\t\tPerfect...\n\t\t\t\t\t\t\tItem added to inventory!");
-					return;
+					return true;
 				}
 			}
 		}
+	}
+	
+	public Boolean pick() {
+		return super.play();
 	}
 
 }

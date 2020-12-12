@@ -6,12 +6,14 @@ public class YardKey extends Item {
 	Locations.Yard yard;
 
 	public YardKey(Locations.Yard yard) {
-		super("key");
+		super("key", "CorridorEast-North");
 		verbs.add("steal");
 		verbs.add("take");
 		super.mustBeTaken = true;
 		super.isException = true;
-		
+		this.desc = "\nSomething shiny catches your eye and it turns out to be a key hanging from the guards belt!"
+				+ "\nIt has a large 'Y' printed on it and you wonder what that could be... \n";
+
 		this.yard = yard;
 	}
 
@@ -19,18 +21,16 @@ public class YardKey extends Item {
 
 		if(!acquired) {
 			p = new Minigames.Pocket();
-
-			try {
-				this.p.pick();
-			} catch (InterruptedException e) {
-
-				e.printStackTrace();
-			}
+			this.p.pick();
 			super.acquired = true;
 		}
 		else {
-			this.yard.isLocked = false;
-			System.out.println("\n << You unlocked the yard entrance. >>\n");
+			if(this.yard.isLocked) {
+				this.yard.isLocked = false;
+				System.out.println("\n << You unlocked the yard entrance. >>\n");
+			}
+			else
+				System.out.println("\n Why?\n");
 		}
 	}
 

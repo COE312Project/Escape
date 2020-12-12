@@ -2,6 +2,7 @@ package GameCharacters;
 
 import GameClock.Subject;
 import Locations.*;
+import Objects.Food;
 
 public class Warden extends Guard{
 
@@ -14,6 +15,11 @@ public class Warden extends Guard{
 	
 	public Warden(Subject s, WardensOffice w, Cafeteria cafe, Player player, Yard yard) {
 		super("warden", s, w, yard);
+		super.inventory.remove(super.key);
+		super.loc.items.remove(super.key);
+		super.dialogs.clear();
+		super.dialogs.add("I won the Best Prison Warden Award in 2016, 2017 and 2019!");
+		this.desc = "The warden looks super angry!";
 		this.office = w;
 		this.cafe = cafe;
 		this.player = player;
@@ -35,7 +41,7 @@ public class Warden extends Guard{
 			this.loc = cafe;
 			cafe.guards.add(this);
 			try {
-				Thread.sleep(30000);
+				Thread.sleep(120000);
 			} catch (InterruptedException e) {}
 
 			this.loc.guards.remove(this);
@@ -53,6 +59,7 @@ public class Warden extends Guard{
 		{
 			//System.out.println("im doing my night jobs");
 			super.yard.isLocked = true; // lock at night
+			cafe.west.north.isLocked = true; // lock cell (actually locks the north corridor)
 			super.yard.north.isLocked = false; // constr zone is accessible at night
 			Thread.sleep(200);
 			this.yardGuard.loc = null; // sent home
@@ -65,7 +72,9 @@ public class Warden extends Guard{
 		{
 			super.yard.isLocked = false; // normal unlock in morning
 			super.yard.north.isLocked = true; // constr zone is inaccessible during the day
-			
+			cafe.west.north.isLocked = false; // unlock cell
+			if(cafe.items.isEmpty())
+				cafe.items.add(new Objects.Food());
 			super.yard.guards.add(this.yardGuard);
 			this.yardGuard.loc = super.yard;
 			doDayJobs = false;

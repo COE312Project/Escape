@@ -1,6 +1,8 @@
 package GameCharacters;
 
-public class Guard extends NPC implements Runnable{
+import java.util.Random;
+
+public class Guard extends Character implements Runnable, NPC{
 	
 	Thread t;
 	Locations.Yard yard;
@@ -8,11 +10,16 @@ public class Guard extends NPC implements Runnable{
 	
 	public Guard(String n, GameClock.Subject s, Locations.Location l, Locations.Yard yard) {
 		super(n,s,l);
+		this.desc = "There's a surly looking guard standing nearby. He doesn't seem too pleased to see you!\n";
 		this.yard = yard; 
 		this.key = new Objects.YardKey(yard);
 		this.inventory.add(key); // all guards have the key to yard
 		super.loc.items.add(key);
-		setDialogueBehavior(new TalkToInteractiveNPC("Where do you think you're you going, huh? Get back to your cell!"));
+		super.dialogs.add("Quit messing around!");
+		super.dialogs.add("What are you looking at? Keep it moving!");
+		super.dialogs.add("Did you finish your chores?!");
+		super.dialogs.add("I need a raise but the dumb warden doesn't think I deserve it! Don't tell him I said that!");
+		super.dialogs.add("Have you seen my fancy new keychain? I got it at Walmart for $29.99! What a steal!");
 		t = new Thread(this);
 		t.start();
 	}
@@ -40,6 +47,11 @@ public class Guard extends NPC implements Runnable{
 				e.printStackTrace();
 			}
 		}
+	}
+
+	public void talk() {
+		Random r = new Random();
+		System.out.println(this.dialogs.get(r.nextInt(dialogs.size())));
 	}
 
 }

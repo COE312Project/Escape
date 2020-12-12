@@ -31,13 +31,13 @@ public class Take implements Command {
 					this.player.inventory.add(i);
 					this.player.loc.items.remove(i);
 					i.acquired = true;
-					System.out.println(i.name + " added to inventory!");
+					System.out.println("\n\t<< "+i.name + " added to inventory! >>\n");
 				}
 				else
-					System.out.println("You cannot do that!");
+					System.out.println("\n\t<< You cannot do that! >>\n");
 				return;
 			}
 		}
-		System.out.println("You see no such thing!");
+		System.out.println("\n\t<< You see no such thing! >>\n");
 	}
 }

@@ -3,13 +3,14 @@ package Objects;
 public class Basketball extends Item{
 
 	Minigames.Basketball bb;
+	public Boolean won = false;
 	public Basketball() {
-		super("basketball");
+		super("basketball","Yard");
 		verbs.add("play");
 	}
 	
 	public void use(String verb) {
 		bb = new Minigames.Basketball();
-		this.bb.play();
+		this.won = this.bb.play();
 	}
 }

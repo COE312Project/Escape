@@ -21,7 +21,7 @@ public class Clock extends ConcreteSubject implements Runnable{
 		{
 			super.notifyObservers(time);
 			try {
-				Thread.sleep(5000);//60000 ms = 1 min = 1hr in game. Change to 1000 for debugging.
+				Thread.sleep(20000);//60000 ms = 1 min = 1hr in game. Change to 1000 for debugging.
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

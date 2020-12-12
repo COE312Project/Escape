@@ -2,13 +2,9 @@ package Minigames;
 import Sensor.TCP_Client;
 import Sensor.coord;
 
-public class CutWindowBar {
+public class CutWindowBar extends SensorMinigame{
 
-	public TCP_Client tcp;
 
-	public CutWindowBar(){
-		this.tcp = new TCP_Client();
-	}
 	
 	public void clear(int n) {
 		for(int i=0;i<n;i++)
@@ -39,7 +35,7 @@ public class CutWindowBar {
 
 	}
 
-	public void cut() throws Exception
+	public Boolean startGame()
 	{
 
 		//KEEP CONSOLE MAXIMIZED
@@ -55,10 +51,18 @@ public class CutWindowBar {
 			if(Math.abs(currAcc.x) + Math.abs(currAcc.y) + Math.abs(currAcc.z) > 25.0)
 			{
 				if(count == 1 ||count % 33 == 0)
-					Sound.Player.getInstance().play("scratch");
+					try {
+						Sound.Player.getInstance().play("scratch");
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
 				System.out.print("#");	
 				count++;
-				Thread.sleep(100);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 			else
 				System.out.print("");
@@ -68,6 +72,9 @@ public class CutWindowBar {
 		System.out.println("\n\n");
 		printWindow(true);
 		//System.out.print("\t\t____________________________________________________________________________________________________\n\t\t####################################################################################################");
-
+		return true;
+	}
+	public Boolean cut() {
+		return super.play();
 	}
 }

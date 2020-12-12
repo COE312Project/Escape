@@ -3,11 +3,11 @@ import java.util.Random;
 import Sensor.TCP_Client;
 import Sensor.coord;
 
-public class LockPick 
+public class LockPick extends SensorMinigame
 {
 
 	Random r = new Random();
-	TCP_Client tcp; // = new TCP_Client("192.168.1.112",23232);
+
 	String[] arrow = new String[] {"↑","↓","←","→"};
 	/*
 	 * ↑ = Phone facing you, upright
@@ -15,12 +15,9 @@ public class LockPick
 	 * ← = Phone facing left
 	 * → = Phone facing right
 	 */
-	public LockPick()
-	{
-		this.tcp = new TCP_Client();
-	}
+
 	
-	public void pick() throws Exception
+	public Boolean startGame()
 	{
 		System.out.println("\t\t     .--------.\r\n" + 
 				"\t\t    / .------. \\\r\n" + 
@@ -85,8 +82,12 @@ public class LockPick
 			if(correct)
 			{
 				System.out.println("\t✓");
-				Sound.Player.getInstance().play("lock");
-				Thread.sleep(1000);
+				try {
+					Sound.Player.getInstance().play("lock");
+				} catch (Exception e) {}
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {	}
 			}
 			else
 			{
@@ -95,7 +96,9 @@ public class LockPick
 				i = -1;
 			}
 
-			Thread.sleep(1000);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {}
 
 		}
 
@@ -112,6 +115,12 @@ public class LockPick
 				"\t            |   '.'.____.'.'   |\r\n" + 
 				"\t            '.____'.____.'____.'\r\n" + 
 				"\t            '.________________.'");
+		
+		return true;
 
+	}
+	public Boolean pick()
+	{
+		return super.play();
 	}
 }

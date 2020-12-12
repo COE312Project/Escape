@@ -7,9 +7,11 @@ public class Move implements Command {
 	String[] args;
 	CurrentLocation curr;
 	GameCharacters.Player player;
-	public Move(CurrentLocation l, GameCharacters.Player p) {
+	GameAssets.GameMap map;
+	public Move(CurrentLocation l, GameCharacters.Player p, GameAssets.GameMap map) {
 		this.curr = l;
 		this.player = p;
+		this.map = map;
 	}
 
 	public Boolean isSynonym(String cmd)
@@ -32,6 +34,7 @@ public class Move implements Command {
 			curr.loc.enter();
 		}
 		else if(arg.toLowerCase().contains("south") && curr.loc.south != null){
+			if(curr.loc.south.isLocked) {System.out.println("\n<< " + curr.loc.name + " is locked! Do you have a key or something *better*? >>\n"); return;	}
 			curr.loc.prisoners.remove(player);
 			curr.loc = curr.loc.south;	
 			player.loc = curr.loc; 
@@ -46,7 +49,7 @@ public class Move implements Command {
 			curr.loc.enter(); 
 		}
 		else if(arg.toLowerCase().contains("west") && curr.loc.west != null){ 
-			if(curr.loc.west.isLocked) {System.out.println("\n << " + curr.loc.west.name + " is locked! Do you have a key? >>\n"); return;	}
+			if(curr.loc.west.isLocked) {System.out.println("\n<< " + curr.loc.west.name + " is locked! Do you have a key? >>\n"); return;	}
 			curr.loc.prisoners.remove(player);
 			curr.loc = curr.loc.west;
 			player.loc = curr.loc; 
@@ -54,9 +57,9 @@ public class Move implements Command {
 			curr.loc.enter(); 
 		}
 		else
-			System.out.println("\n << You cannot go there! >>\n"); 
-		
-		if(player.map != null)
-			player.map.setLocation(curr.loc.name);
+			System.out.println("\n<< You cannot go there! >>\n"); 
+
+		//	if(player.inventory.contains(map))
+		map.setLocation(curr.loc.name);
 	}
 }

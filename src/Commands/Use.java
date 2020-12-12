@@ -2,7 +2,7 @@ package Commands;
 
 public class Use implements Command{
 
-	String[] synonyms = new String[]{"use","play","access","login","eat","throw","cut","saw","pick","steal","map","check","show"};
+	String[] synonyms = new String[]{"use","play","access","login","eat","throw","cut","saw","pick","steal","map","check","show","sleep"};
 	String[] args;
 	GameCharacters.Player player;
 
@@ -26,14 +26,18 @@ public class Use implements Command{
 		for(Objects.Item i : this.player.inventory) {
 			if(arg.toLowerCase().contains(i.name)) {
 				if(i.verbs.contains(cmd.toLowerCase())) {
-					if(cmd.equalsIgnoreCase("throw") && arg.toLowerCase().contains("food"))
-						player.loc.commotion = true;
-					i.use(cmd);
-					if(i.isExpendable)
-						player.inventory.remove(i);
+					if(player.loc.name.equalsIgnoreCase(i.locName) || i.locName == "") {
+						if(cmd.equalsIgnoreCase("throw") && arg.toLowerCase().contains("food"))
+							player.loc.commotion = true;
+						i.use(cmd);
+						if(i.isExpendable)
+							player.inventory.remove(i);
+					}
+					else
+						System.out.println("\n\t<< You cannot "+ cmd +" "+ i.name +" here! >>\n");
 				}
 				else
-					System.out.println("You cannot do that!");
+					System.out.println("\n\t<< You cannot do that! >>\n");
 				return;
 			}
 		}
@@ -45,13 +49,13 @@ public class Use implements Command{
 						i.use(cmd);
 					}
 					else
-						System.out.println("You cannot do that!");
+						System.out.println("\n\t<< You cannot do that! >>\n");
 				}
 				else
-					System.out.println("No such item in your inventory!");
+					System.out.println("\n\t<< No such item in your inventory! >>\n");
 				return;
 			}
 		}
-		System.out.println("You neither see nor have any such thing!");
+		System.out.println("\n\t<< You neither see nor have any such thing! >>\n");
 	}
 }

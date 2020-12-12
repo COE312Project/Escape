@@ -1,6 +1,7 @@
 package Commands;
 
-import GameCharacters.Player;
+import GameCharacters.*;
+import Objects.*;
 
 public class Look implements Command {
 
@@ -35,6 +36,18 @@ public class Look implements Command {
 				System.out.println(this.player.loc.eDesc);
 			if(this.player.loc.wDesc != "")
 				System.out.println(this.player.loc.wDesc);
+			
+			
+			for(Prisoner p: this.player.loc.prisoners) {
+				if(p != player)
+					System.out.println(p.desc);
+			}
+			for(Guard g: this.player.loc.guards) {
+				System.out.println(g.desc);
+			}
+			for(Item i:this.player.loc.items) {
+				System.out.print(i.desc);
+			}
 		}
 	}
 }

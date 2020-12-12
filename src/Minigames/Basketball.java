@@ -4,22 +4,25 @@ import Sensor.TCP_Client;
 import Sensor.coord;
 import Sound.Player;
 
-public class Basketball {
-	TCP_Client tcp;
+public class Basketball extends SensorMinigame {
 	int score = 0;
-	public Basketball() {
-		this.tcp = new TCP_Client();
-	}
-
-	public void play() {
-		System.out.println("Score 5 to win:");
-		while (score < 5) {
+		
+	public Boolean startGame() {
+	
+		System.out.println("Score 7 to win:");
+		int score = 0;
+		while (score < 7) {
 			try {
 				coord curAcc = this.tcp.accel;
 				coord curRot = this.tcp.rot;
 
-				if (curAcc.y > 15 || curAcc.z > 15 && !(curRot.y > 0.7)) {
-					System.out.println("\tNice Shot!");
+				if (curAcc.y > 16 || curAcc.z > 16 && !(curRot.y > 0.7)) {
+					System.out.println("\tPerfect Shot! Thats a 3 pointer! \n\t<< Score:"+ score +" >>\n");
+					score+=3;
+					Sound.Player.getInstance().play("basketball_hit");
+					Thread.sleep(500);
+				} else if (curAcc.y > 12 || curAcc.z > 12 && !(curRot.y > 0.7)) {
+					System.out.println("\tGood Shot!");
 					score++;
 					Sound.Player.getInstance().play("basketball_hit");
 					Thread.sleep(500);
@@ -31,6 +34,8 @@ public class Basketball {
 				e.printStackTrace();
 			}
 		}
+		return true;
 	}
+
 
 }

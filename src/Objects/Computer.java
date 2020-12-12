@@ -6,7 +6,8 @@ public class Computer extends Item{
 	public Boolean camDisabled = false;
 
 	public Computer() {
-		super("computer");
+		super("computer", "WardensOffice");
+		this.desc = " You see a computer on the wardens desk that's unlocked. \n";
 		verbs.add("login");
 		verbs.add("access");
 	}

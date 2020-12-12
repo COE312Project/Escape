@@ -5,9 +5,10 @@ public class Paperclip extends Item{
 	Minigames.LockPick lp;
 	
 	public Paperclip() {
-		super("paperclip");
+		super("paperclip", "Cell");
 		super.canBeTaken();
 		verbs.add("pick");
+		this.desc = "\nThere is a paperclip lying on the desk. \n";
 	}
 
 	public void use(String verb) {

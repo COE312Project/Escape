@@ -35,7 +35,7 @@ public class Start {
 		Thread.sleep(5000); // to appreciate the music xD
 		System.out.println(subtitle);
 		Thread.sleep(5000);
-		System.out.println("\n\t\t\t\t\t\tPRESS ANY KEY TO START");
+		System.out.println("\n\t\t\t\t\t\tPRESS [ENTER "+"↵"+"] TO START");
 
 	}
 

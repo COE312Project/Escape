@@ -33,7 +33,7 @@ public class Inventory implements Command {
 		}
 		else
 		{
-			System.out.println("The "+arg+" is empty!\n");
+			System.out.println("\n\t<< The "+arg+" is empty! >>\n");
 		}
 	}
 }

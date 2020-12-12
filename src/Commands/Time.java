@@ -25,7 +25,7 @@ public class Time implements Command {
 		int time = player.time % 12;
 		if (time == 0) time=12;
 		
-		System.out.println(time +":00" +((player.time <12)?" AM":" PM"));
+		System.out.println("\n\t<< " + time +":00" +((player.time <12)?" AM":" PM") + " >>\n");
 		//System.out.println(player.time);
 	}
 }

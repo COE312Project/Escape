@@ -14,7 +14,7 @@ import Locations.*;
 public class Driver {
 
 	//need to only pass these values here
-	public static final String IP = "192.168.1.112";
+	public static final String IP = "192.168.1.101";
 	public static final int PORT = 23232;
 
 	public static void main(String[] args) throws InterruptedException {
@@ -81,40 +81,48 @@ public class Driver {
 		Player player = new Player("Prisoner420",clock,cell);
 		cell.prisoners.add(player);
 		
-		Guard yardGuard = new Guard("Bob",clock,yard,yard);
+		Guard yardGuard = new Guard("guard",clock,yard,yard);
 		yard.guards.add(yardGuard);
 		
 		Warden w = new Warden(clock, wardensOffice, cafeteria, player, yard);
 		wardensOffice.guards.add(w);
 		
-		PatrollingGuard pguard = new PatrollingGuard("Jeff", clock, aLeft, yard);
-		
-		Guard bUpGuard = new Guard("Chris",clock, bUp, yard);
+		PatrollingGuard pguard = new PatrollingGuard("guard", clock, aLeft, yard);
+				
+		Guard bUpGuard = new Guard("guard",clock, bUp, yard);
 		bUp.guards.add(bUpGuard);
 		
-		Guard dLeftGuard = new Guard("Dennis",clock, dLeft, yard);
+		Guard dLeftGuard = new Guard("guard",clock, dLeft, yard);
 		dLeft.guards.add(dLeftGuard);
 		
-		Guard dRightGuard = new Guard("Graham",clock, dRight, yard);
+		Guard dRightGuard = new Guard("guard",clock, dRight, yard);
 		dRight.guards.add(dRightGuard);
 		
-		Move move = new Move(curr, player);
+		GameAssets.GameMap map = new GameAssets.GameMap();
+		
+		Move move = new Move(curr, player, map);
 		Take take = new Take(player);
 		Use use = new Use(player);
 		Inventory inventory = new Inventory(player);
 		Look look = new Look(player);
 		Time time = new Time(player);
+		Talk talk = new Talk(player);
 		
-		Command[] cmds = new Command[] {move, take, use, inventory, look, time};
+		Command[] cmds = new Command[] {move, take, use, inventory, look, time, talk};
 		ControlPanel cp = new ControlPanel(cmds);
 		
 		// Uncomment if you have 20 seconds to spare
 		//Start.start();
 
 		Scanner cin = new Scanner(System.in);
-		GameAssets.GameMap map = new GameAssets.GameMap();
-		player.inventory.add(map);
-		player.map = map;
+		//player.inventory.add(map);
+		//player.map = map;
+		
+		FriendlyPrisoner fp = new FriendlyPrisoner("Joe",clock,yard,map,yard, player, wardensOffice);
+		yard.prisoners.add(fp);
+		
+		Bed bed = new Bed();
+		cell.items.add(bed);
 		
 		// for Start
 		// if we make it "press enter to continue" this is fine
