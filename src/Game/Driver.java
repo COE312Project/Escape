@@ -138,6 +138,7 @@ public class Driver {
 		//maybe we should make the Start not say "enter any key" :( I wasted 1 hr 
 		//End.end("win");
 		cell.enter();
+
 		while(true)
 		{
 			System.out.print("> ");

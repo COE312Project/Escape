@@ -20,11 +20,18 @@ public class Look implements Command {
 				return true;
 		return false;
 	}
-	
+
 	public void execute(String arg)
 	{
-		if((this.player.time >= 19 || this.player.time <= 6) && this.player.loc.nightDesc != "")
+		if((this.player.time >= 19 || this.player.time <= 6) && this.player.loc.nightDesc != "") {
 			System.out.println(this.player.loc.nightDesc);
+			if(this.player.loc.name.equals("ConstructionZone")) 
+			{
+				for(Item i:this.player.loc.items) {
+					System.out.print(i.desc);
+				}
+			}
+		}
 		else
 		{
 			System.out.println(this.player.loc.desc);
@@ -36,8 +43,8 @@ public class Look implements Command {
 				System.out.println(this.player.loc.eDesc);
 			if(this.player.loc.wDesc != "")
 				System.out.println(this.player.loc.wDesc);
-			
-			
+
+
 			for(Prisoner p: this.player.loc.prisoners) {
 				if(p != player)
 					System.out.println(p.desc);
