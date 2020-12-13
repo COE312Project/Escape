@@ -114,13 +114,14 @@ public class Driver {
 		Look look = new Look(player);
 		Time time = new Time(player);
 		Talk talk = new Talk(player);
+		Help help = new Help();
 		
-		Command[] cmds = new Command[] {move, take, use, inventory, look, time, talk};
+		Command[] cmds = new Command[] {move, take, use, inventory, look, time, talk, help};
 		ControlPanel cp = new ControlPanel(cmds);
 		
 		// Uncomment if you have 20 seconds to spare
 		//sewer.enter();
-		//Start.start();
+		Start.start();
 
 		Scanner cin = new Scanner(System.in);
 		//player.inventory.add(map);
@@ -129,9 +130,11 @@ public class Driver {
 		FriendlyPrisoner fp = new FriendlyPrisoner("Joe",clock,yard,map,yard, player, wardensOffice);
 		yard.prisoners.add(fp);
 		
-		Bed bed = new Bed();
-		cell.items.add(bed);
-		player.inventory.add(map);
+		CafeteriaPrisoner cP = new CafeteriaPrisoner("Sam",clock,cafeteria,cafeteria);
+		
+		//player.inventory.add(new Hacksaw(outerN));
+		
+		//player.inventory.add(map);
 		
 		// for Start
 		// if we make it "press enter to continue" this is fine

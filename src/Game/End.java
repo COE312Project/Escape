@@ -10,8 +10,8 @@ public class End {
 
 	static String pretitle_dead = new String( 
 			"\n" +
-			"\t\t\t    █▄█ █▀█ █ █   █▀▄ █ █▀▀ █▀▄ ▀█\n" + 
-			"\t\t\t     █  █▄█ █▄█   █▄▀ █ ██▄ █▄▀  ▄\n"
+			"\t\t\t\t    █▄█ █▀█ █ █   █▀▄ █ █▀▀ █▀▄ ▀█\n" + 
+			"\t\t\t\t     █  █▄█ █▄█   █▄▀ █ ██▄ █▄▀  ▄\n"
 	);
 	
 	static String title = new String (
@@ -169,6 +169,7 @@ public class End {
 				}
 				System.out.println(pretitle_dead);
 			}
+			Thread.sleep(3000);
 			System.out.println(title);
 			
 			Thread.sleep(5000);	//need this coz system.exit happens immediately after this and no sound will be played

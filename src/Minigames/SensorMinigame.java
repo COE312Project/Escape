@@ -11,7 +11,7 @@ public abstract class SensorMinigame {
 		this.tcp = TCP_Client.getInstance();
 	}
 	protected final void printInstructions() {
-		System.out.println("\n\t\t<< HIT ENTER WHEN YOU'RE READY >>");
+		System.out.println("\n\t\t<< GET YOUR PHONE READY >>");
 		//(new Scanner(System.in)).nextLine();
 	}
 	

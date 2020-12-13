@@ -71,7 +71,7 @@ public class Basketball extends SensorMinigame {
 	}
 
 	public void gameInstructions() {
-		System.out.println("Score 7 to win:");
+		System.out.println("Score 7 to win:\n");
 	}
 
 }

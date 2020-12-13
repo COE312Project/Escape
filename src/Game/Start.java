@@ -34,10 +34,10 @@ public class Start {
 			System.out.print(t);
 			Thread.sleep(150);
 		}
-		Thread.sleep(5000); // to appreciate the music xD
+		Thread.sleep(6000); // to appreciate the music xD
 		System.out.println(subtitle);
-		Thread.sleep(5000);
-		System.out.println("\n\t\t\t\t\t\tPRESS [ENTER "+"↵"+"] TO START");
+		Thread.sleep(6000);
+		System.out.println("\n\t\t\t\t\t\tPRESS ENTER TO START");
 		(new Scanner(System.in)).nextLine();
 
 	}

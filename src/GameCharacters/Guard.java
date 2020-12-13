@@ -30,7 +30,7 @@ public class Guard extends Character implements Runnable, NPC{
 		// all npc prisoners automatically go to cell, so if there is any prisoner in the same loc as guard, its the player
 		if((this.time >= 19 || this.time <= 6) && this.loc != null && !this.loc.prisoners.isEmpty()) 
 		{
-			return nB.doTasks("Night Guard");
+			return nB.doTasks("Night Guard "+this.name);
 		}
 		else
 			System.out.print("");

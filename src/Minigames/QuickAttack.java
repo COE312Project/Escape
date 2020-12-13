@@ -11,7 +11,7 @@ public class QuickAttack extends SensorMinigame{
 	
 	public Boolean startGame() 
 	{
-		this.w = new Watch(4);
+		this.w = new Watch(3);
 		this.w.t.start();
 		while(true)
 		{
@@ -22,9 +22,7 @@ public class QuickAttack extends SensorMinigame{
 				try {
 					Sound.Player.getInstance().play("hit");
 				} catch (Exception e) {	}
-				System.out.print("\n With your super fast reflexes, you deliver a lethal blow to the guard!\n"
-						+ " He didn't know that you had a yellow belt in karate!\n"
-						+ " You lay the down quietly, as to not alarm the other guards.\n> ");
+				
 				w.t.interrupt();
 				return false;
 			}
@@ -33,7 +31,7 @@ public class QuickAttack extends SensorMinigame{
 
 
 	public void gameInstructions() {
-		System.out.println("\n\t\t<< Quick! Attack or be attacked! >>");
+		System.out.println("\t\t<< Quick! Attack or be attacked! >>");
 	}
 	
 }

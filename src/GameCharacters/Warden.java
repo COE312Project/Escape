@@ -14,11 +14,11 @@ public class Warden extends Guard{
 	public Boolean doDayJobs = false;
 	
 	public Warden(Subject s, WardensOffice w, Cafeteria cafe, Player player, Yard yard) {
-		super("warden", s, w, yard);
+		super("Wallace", s, w, yard);
 		super.inventory.remove(super.key);
 		super.loc.items.remove(super.key);
 		super.dialogs.clear();
-		super.dialogs.add("\n[Warden]:\n\t❝  I won the Best Prison Warden Award in 2016, 2017 and 2019!   ❞\n");
+		super.dialogs.add("\n[Warden "+this.name+"]:\n\t❝  I won the Best Prison Warden Award in 2016, 2017 and 2019!   ❞\n");
 		nB = new WardenNight();
 		this.desc = "The warden looks super angry!";
 		this.office = w;
@@ -32,7 +32,7 @@ public class Warden extends Guard{
 			try {
 				Thread.sleep(200); // so that the location title gets printed before warden freaks out
 			} catch (InterruptedException e) {}
-			System.out.println("\n[Warden]:\n\t❝  Hey! What are you doing in here?! That's it, solitary confinement for you! ❞\n");
+			System.out.println("\n[Warden "+this.name+"]:\n\t❝  Hey! What are you doing in here?! That's it, solitary confinement for you! ❞\n");
 			Game.End.end("caught");
 		}
 		if(this.cafe.commotion)
@@ -52,14 +52,15 @@ public class Warden extends Guard{
 		
 		}
 		if((this.time >= 19 || this.time <= 6) && !this.office.computer.camDisabled && !this.player.loc.name.equals("Cell")) {
-			nB.doTasks("Through the PA");
+			nB.doTasks("Through PA");
 		}
-
+		if(this.time == 16 && !cafe.isLocked) {
+			cafe.isLocked = true;
+		}
 		if(this.time == 19 && doNightJobs)
 		{
 			//System.out.println("im doing my night jobs");
 			super.yard.isLocked = true; // lock at night
-			cafe.isLocked = true;
 			cafe.west.north.isLocked = true; // lock cell (actually locks the north corridor)
 			super.yard.north.isLocked = false; // constr zone is accessible at night
 			Thread.sleep(200);

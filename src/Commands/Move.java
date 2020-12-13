@@ -43,6 +43,7 @@ public class Move implements Command {
 			curr.loc.enter(); 
 		}
 		else if(arg.toLowerCase().contains("east") && curr.loc.east != null) {
+			if(curr.loc.east.isLocked) {System.out.println("\n<< " + curr.loc.east.name + " is locked! >>\n"); return;	}
 			curr.loc.prisoners.remove(player);
 			curr.loc = curr.loc.east;
 			player.loc = curr.loc; 
