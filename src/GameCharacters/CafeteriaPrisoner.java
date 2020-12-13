@@ -18,7 +18,11 @@ public class CafeteriaPrisoner extends Prisoner implements Runnable, NPC
 				+ "It's pretty good once you get used to it. No goddamn taxes to pay as well! ❞\n");
 		super.dialogs.add("\n["+this.name+"]:\n\t❝  Did you meet my pal in the yard?"+"  ❞\n");
 		super.dialogs.add("\n["+this.name+"]:\n\t❝   Missing your mama already huh? ❞\n");
-		
+		super.dialogs.add("\n["+this.name+"]:\n\t❝ Did you hear about the huge fight here yesterday?\n Man, Shaq almost killed that guy for spilling soup on him! ❞\n");
+		super.dialogs.add("\n["+this.name+"]:\n\t❝ I heard the Warden volunteers at the Community Soup Kitchen. He really hates food waste... ❞\n");
+		super.dialogs.add("\n["+this.name+"]:\n\t❝ Man, the food here is disgustin! ❞\n");
+
+
 		this.desc = "\n Sitting among the other prisoners is "+this.name+" who introduced you to the prison the day before.\n";
 
 

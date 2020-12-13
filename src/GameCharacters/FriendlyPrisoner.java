@@ -27,7 +27,7 @@ public class FriendlyPrisoner extends Prisoner implements Runnable, NPC
 				"\n["+this.name+"]:\n\t❝ It has all the locations and more importantly, I've managed to figure out all the camera positions, shown as 'C' ❞\n");
 		super.dialogs.add("\n["+this.name+"]:\n\t❝  We need to sneak out at night, but there's cams everywhere and you can't step out after the curfew. "
 				+ "\n\tLuckily, I have sources that tell me you can disable them from the Warden's computer in his office. \n"
-				+ "\n\tUnfortunately, the warden never leaves unless there's a huge fight like the one that happened last week in the Cafeteria. ❞\n");
+				+ "\n\tUnfortunately, the warden never leaves unless there's a huge problem that needs his attention. ❞\n");
 		super.dialogs.add("\n["+this.name+"]:\n\t❝  The bars in your Cell window are worn out, but you will need some heavy duty tools to break them.❞\n");
 		super.dialogs.add("\n["+this.name+"]:\n\t❝  You should be able to figure out the rest on your own! ❞\n");
 		
