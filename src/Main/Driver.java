@@ -25,7 +25,7 @@ public class Driver {
 		
 		Sewer sewer = new Sewer();
 		
-		outerN.setNeighbors(null,sewer,null,null);
+		outerN.setNeighbors(null,null,sewer,null);
 		
 		ConstructionZone constrZone = new ConstructionZone(outerN);
 
