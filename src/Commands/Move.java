@@ -58,7 +58,7 @@ public class Move implements Command {
 			curr.loc.enter(); 
 		}
 		else
-			System.out.println("\n<< You cannot go there! >>\n"); 
+			System.out.println("\n\t<< You cannot go there! >>\n"); 
 
 		//	if(player.inventory.contains(map))
 		map.setLocation(curr.loc.name);

@@ -20,7 +20,7 @@ public class Look implements Command {
 				return true;
 		return false;
 	}
-
+	
 	public void execute(String arg)
 	{
 		if((this.player.time >= 19 || this.player.time <= 6) && this.player.loc.nightDesc != "")

@@ -137,7 +137,7 @@ public class Driver {
 		// if we make it "press enter to continue" this is fine
 		//maybe we should make the Start not say "enter any key" :( I wasted 1 hr 
 		//End.end("win");
-
+		cell.enter();
 		while(true)
 		{
 			System.out.print("> ");
