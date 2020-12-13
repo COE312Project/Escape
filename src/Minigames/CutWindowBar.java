@@ -77,4 +77,8 @@ public class CutWindowBar extends SensorMinigame{
 	public Boolean cut() {
 		return super.play();
 	}
+
+	public void gameInstructions() {
+		System.out.println("\n\t<< Use your strength to saw the window bars and escape from your cell >>\n");
+	}
 }

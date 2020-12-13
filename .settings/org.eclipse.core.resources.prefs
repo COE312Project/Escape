@@ -1,5 +1,8 @@
 eclipse.preferences.version=1
 encoding//src/Commands/Move.java=UTF-8
+encoding//src/Game/Driver.java=UTF-8
+encoding//src/Game/End.java=UTF-8
+encoding//src/Game/Start.java=UTF-8
 encoding//src/GameAssets/GameMap.java=UTF-8
 encoding//src/GameCharacters/FriendlyPrisoner.java=UTF-8
 encoding//src/GameCharacters/Guard.java=UTF-8
@@ -8,8 +11,5 @@ encoding//src/GameCharacters/PatrollingGuard.java=UTF-8
 encoding//src/GameCharacters/Warden.java=UTF-8
 encoding//src/GameCharacters/WardenNight.java=UTF-8
 encoding//src/Locations/Location.java=UTF-8
-encoding//src/Main/Driver.java=UTF-8
-encoding//src/Main/End.java=UTF-8
-encoding//src/Main/Start.java=UTF-8
 encoding//src/Minigames/CutWindowBar.java=UTF-8
 encoding//src/Minigames/LockPick.java=UTF-8

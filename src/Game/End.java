@@ -1,4 +1,4 @@
-package Main;
+package Game;
 
 public class End {
 	
@@ -148,32 +148,32 @@ public class End {
 			//Thread.sleep(30000); //not needed since credits are longer than music
 			System.exit(0);
 		}
-		if(ending.equals("caught"))
+		else 
 		{
-			try {
-				Sound.Player.getInstance().play("game_over");
-			} catch (Exception e) {
-				e.printStackTrace();
+			if(ending.equals("caught"))
+			{
+				try {
+					Sound.Player.getInstance().play("game_over");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+		
+				System.out.println(pretitle_caught);
 			}
-	
-			System.out.println(pretitle_caught);
-		}
-		else if(ending.equals("dead"))
-		{
-			try {
-				Sound.Player.getInstance().play("groan");
-			} catch (Exception e) {
-				e.printStackTrace();
+			else if(ending.equals("dead"))
+			{
+				try {
+					Sound.Player.getInstance().play("groan");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				System.out.println(pretitle_dead);
 			}
-			System.out.println(pretitle_dead);
+			System.out.println(title);
+			
+			Thread.sleep(5000);	//need this coz system.exit happens immediately after this and no sound will be played
+			
+			System.exit(0);
 		}
-				
-		System.out.println(title);
-		
-		Thread.sleep(5000);	//need this coz system.exit happens immediately after this and no sound will be played
-		
-		System.exit(0);
-		
 	}
-
 }

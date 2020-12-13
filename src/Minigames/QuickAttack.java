@@ -11,7 +11,6 @@ public class QuickAttack extends SensorMinigame{
 	
 	public Boolean startGame() 
 	{
-		System.out.println("\n\t\t<< Quick! Attack or be attacked! >>");
 		this.w = new Watch(4);
 		this.w.t.start();
 		while(true)
@@ -30,6 +29,11 @@ public class QuickAttack extends SensorMinigame{
 				return false;
 			}
 		}
+	}
+
+
+	public void gameInstructions() {
+		System.out.println("\n\t\t<< Quick! Attack or be attacked! >>");
 	}
 	
 }

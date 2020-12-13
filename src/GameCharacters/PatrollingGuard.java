@@ -13,8 +13,8 @@ public class PatrollingGuard extends Guard{
 		super(n, s, l, yard);
 		super.inventory.remove(super.key); // patrolling guard 
 		super.loc.items.remove(super.key); // remove from location as well
-		super.dialogs.remove("Have you seen my fancy new keychain? I got it at Walmart for $29.99! What a steal!");
-		super.dialogs.add("Argh! I'm tired of walking all day!");
+		super.dialogs.remove("\n[Patrolling Guard]:\n\t❝  Have you seen my fancy new keychain? I got it at Walmart for $29.99! What a steal! ❞\n");
+		super.dialogs.add("\n[Patrolling Guard]:\n\t❝  Argh! I'm tired of walking all day and night! ❞\n");
 		patrol = new Patrol();
 		ctxt = new Context(this, patrol);
 		this.desc = "\n The guard standing in the corner looks very tense and is unlike the other guards.\n"

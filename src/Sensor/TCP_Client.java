@@ -17,12 +17,12 @@ import java.io.*;
 public class TCP_Client implements Runnable {
 
 	// ip address of the machine 
-	String host = Main.Driver.IP;
+	String host = Game.Driver.IP;
 	
 	JSONParser parser;
 
 	// need the port 
-	int port = Main.Driver.PORT;
+	int port = Game.Driver.PORT;
 	public coord accel, gyro, rot;
 	
 	private static TCP_Client instance;

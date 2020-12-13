@@ -1,4 +1,4 @@
-package Main;
+package Game;
 import Objects.*;
 import Commands.*;
 import GameAssets.GameMap;
@@ -119,8 +119,8 @@ public class Driver {
 		ControlPanel cp = new ControlPanel(cmds);
 		
 		// Uncomment if you have 20 seconds to spare
-		sewer.enter();
-		Start.start();
+		//sewer.enter();
+		//Start.start();
 
 		Scanner cin = new Scanner(System.in);
 		//player.inventory.add(map);
@@ -131,7 +131,7 @@ public class Driver {
 		
 		Bed bed = new Bed();
 		cell.items.add(bed);
-		
+		player.inventory.add(map);
 		
 		// for Start
 		// if we make it "press enter to continue" this is fine

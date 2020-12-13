@@ -18,7 +18,7 @@ public class Warden extends Guard{
 		super.inventory.remove(super.key);
 		super.loc.items.remove(super.key);
 		super.dialogs.clear();
-		super.dialogs.add("I won the Best Prison Warden Award in 2016, 2017 and 2019!");
+		super.dialogs.add("\n[Warden]:\n\t❝  I won the Best Prison Warden Award in 2016, 2017 and 2019!   ❞\n");
 		nB = new WardenNight();
 		this.desc = "The warden looks super angry!";
 		this.office = w;
@@ -33,7 +33,7 @@ public class Warden extends Guard{
 				Thread.sleep(200); // so that the location title gets printed before warden freaks out
 			} catch (InterruptedException e) {}
 			System.out.println("\n[Warden]:\n\t❝  Hey! What are you doing in here?! That's it, solitary confinement for you! ❞\n");
-			Main.End.end("caught");
+			Game.End.end("caught");
 		}
 		if(this.cafe.commotion)
 		{

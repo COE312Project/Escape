@@ -11,6 +11,7 @@ public class Basketball extends Item{
 	
 	public void use(String verb) {
 		bb = new Minigames.Basketball();
+		System.out.println("\n\t<< Score: 7 >>\n");
 		this.won = this.bb.play();
 	}
 }

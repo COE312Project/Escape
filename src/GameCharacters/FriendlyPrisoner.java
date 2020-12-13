@@ -33,7 +33,7 @@ public class FriendlyPrisoner extends Prisoner implements Runnable, NPC
 		
 		
 		this.desc = "\n You see an old guy sitting all alone on the benches. He glances at you with a reproachful look.\n"
-				+ " This must be the famous " + this.name + " that you heard the other prisoners talking about...\n";
+				+ " This must be the famous ❝   Broody " + this.name + " ❞  that you heard the other prisoners talking about...\n";
 
 
 		this.player = p;

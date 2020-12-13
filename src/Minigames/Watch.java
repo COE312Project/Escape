@@ -35,7 +35,7 @@ public class Watch implements java.lang.Runnable {
 				+ "You think of the last good time you had...\nSneaking out of the Bank of America with your heist crew with your share of the 10 million dollars\n"
 				+ "Your vision eventually fades into darkness.");
 		try {
-			Main.End.end("dead");
+			Game.End.end("dead");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

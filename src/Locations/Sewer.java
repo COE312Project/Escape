@@ -27,7 +27,7 @@ public class Sewer extends Location{
 			Thread.sleep(5000);
 
 
-			Main.End.end("win");
+			Game.End.end("win");
 		} catch (InterruptedException e) {}
 	}
 }

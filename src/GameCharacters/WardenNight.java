@@ -6,7 +6,7 @@ public class WardenNight extends NightBehaviour {
 		
 		System.out.println("\n["+n+"]:\n\t❝   Aha! You thought I wouldn't see you? Nothing gets past me. Guards, detain him! ❞\n");
 		try {
-			Main.End.end("caught");
+			Game.End.end("caught");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

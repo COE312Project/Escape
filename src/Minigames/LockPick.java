@@ -123,4 +123,8 @@ public class LockPick extends SensorMinigame
 	{
 		return super.play();
 	}
+
+	public void gameInstructions() {
+		System.out.println("\n\t<< Tilt the lockpick in the given directions to unlock your cell. >>\n");
+	}
 }

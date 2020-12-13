@@ -29,7 +29,7 @@ public class Pocket extends SensorMinigame {
 				System.out.println("\n\t\t\t\t\t\t\t\tYou alerted the guard!");
 				System.out.print("\n[Guard]:\n❝    What the hell do you think you're doing with your hand in my pocket, huh ?! ❞\n");
 				try {
-					Main.End.end("caught");
+					Game.End.end("caught");
 				} catch (InterruptedException e) {}
 				return false;
 			}
@@ -43,7 +43,7 @@ public class Pocket extends SensorMinigame {
 				} catch (InterruptedException e) {}
 				if(progress == 50) {
 					
-					System.out.println("\n\t\t\t\t\t\t\t\tPerfect...\n\t\t\t\t\t\t\tItem added to inventory!");
+					System.out.println("\n\t\t\t\t\t\t\t\t<< Perfect...\n\t\t\t\t\t\t\tItem added to inventory! >>");
 					return true;
 				}
 			}
@@ -52,6 +52,10 @@ public class Pocket extends SensorMinigame {
 	
 	public Boolean pick() {
 		return super.play();
+	}
+
+	public void gameInstructions() {
+		System.out.println("\n\t<< Move your hand slowly as to not alert the guard. >>\n");
 	}
 
 }
