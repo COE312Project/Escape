@@ -18,7 +18,7 @@ public abstract class SensorMinigame {
 	public final Boolean play()
 	{
 		printInstructions();
-		startGame();
+		gameInstructions();
 		setupTCP();
 		return startGame();
 	}
