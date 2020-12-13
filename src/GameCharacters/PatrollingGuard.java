@@ -17,8 +17,8 @@ public class PatrollingGuard extends Guard{
 		super.dialogs.add("Argh! I'm tired of walking all day!");
 		patrol = new Patrol();
 		ctxt = new Context(this, patrol);
-		this.desc = "\nThe guard standing in the corner looks very tense and is unlike the other guards.\n"
-				+ "Strangely, he also does not have the same key with the large 'Y' on it. \n";
+		this.desc = "\n The guard standing in the corner looks very tense and is unlike the other guards.\n"
+				+ " He seems to always be on the move... \n";
 	}
 
 	public Boolean defaultActivities() throws Exception {

@@ -119,7 +119,8 @@ public class Driver {
 		ControlPanel cp = new ControlPanel(cmds);
 		
 		// Uncomment if you have 20 seconds to spare
-		//Start.start();
+		sewer.enter();
+		Start.start();
 
 		Scanner cin = new Scanner(System.in);
 		//player.inventory.add(map);
@@ -131,11 +132,12 @@ public class Driver {
 		Bed bed = new Bed();
 		cell.items.add(bed);
 		
-		End.end("win");
 		
 		// for Start
 		// if we make it "press enter to continue" this is fine
 		//maybe we should make the Start not say "enter any key" :( I wasted 1 hr 
+		//End.end("win");
+
 		while(true)
 		{
 			System.out.print("> ");

@@ -135,6 +135,8 @@ public class End {
 				e.printStackTrace();
 			}
 			System.out.println(winTitle);
+			Thread.sleep(10000);
+			System.out.println("\n\n");
 			for(String r: roles) {
 				System.out.println(r);
 				Thread.sleep(500);
@@ -143,7 +145,7 @@ public class End {
 					Thread.sleep(500);
 				}
 			}
-			Thread.sleep(30000);
+			//Thread.sleep(30000); //not needed since credits are longer than music
 			System.exit(0);
 		}
 		if(ending.equals("caught"))

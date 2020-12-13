@@ -18,6 +18,11 @@ public class Player extends Prisoner implements Runnable
 			if(this.time == 18) {
 				if(!warned) {
 					System.out.print("\n[Through PA]:\n\t<< It's 6:00 pm! You have 1 hour to return to your cell. >>\n> ");
+					try {
+						Sound.Player.getInstance().play("curfewAlarm");
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 					warned = true;
 				}
 			}

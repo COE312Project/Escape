@@ -42,7 +42,7 @@ public class Warden extends Guard{
 			this.loc = cafe;
 			cafe.guards.add(this);
 			try {
-				Thread.sleep(60000);
+				Thread.sleep(120000);
 			} catch (InterruptedException e) {}
 
 			this.loc.guards.remove(this);
@@ -81,6 +81,7 @@ public class Warden extends Guard{
 			this.yardGuard.loc = super.yard;
 			doDayJobs = false;
 			doNightJobs = true;
+			System.out.print("\n[Through PA]:\n\t<< Rise and shine!!! >>\n> ");
 
 		}
 		else 

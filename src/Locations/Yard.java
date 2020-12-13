@@ -13,7 +13,7 @@ public class Yard extends Location{
 		this.name = "Yard";
 		super.desc = "The Prison Yard is full of activity. Some are playing basketball while others are just hanging out.\n"
 				+ "Most of them seem to be in gangs and dont look very friendly! ";
-		super.wDesc = "To the West, is the door to through which you entered. ";
+		super.wDesc = "To the East, is the door to through which you entered. ";
 		super.nDesc = "You also notice some construction work going on in the North-West corner. ";
 		
 		super.nightDesc = "The Yard is completely empty at night and you get a little spooked.\n"

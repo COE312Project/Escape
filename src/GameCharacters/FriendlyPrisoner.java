@@ -21,13 +21,13 @@ public class FriendlyPrisoner extends Prisoner implements Runnable, NPC
 		super.dialogs.add("\n["+this.name+"]:\n\t❝  Sorry, I don't talk to newbies. Show me what you can do on the basketball court and then we'll talk! ❞\n");
 		super.dialogs.add("\n["+this.name+"]:\n\t❝  You seem like a good person. If you're looking to get out of here, I can help you... You in? [y/n] ❞\n");
 		super.dialogs.add("\n["+this.name+"]:\n\t❝  Now that's a good decision!\nI've been in here longer than anybody else and I know the ins and outs of this place. "
-				+ "\nI have managed to sketch out this entire prison.\nQuick, take this map before anyone sees! ❞\n"+
-				"\n\t<< He hands you a folded, worn out piece of paper >> "+
-				"\n\t<< Map added to inventory >>"+
+				+ "\n\tI have managed to sketch out this entire prison.\nQuick, take this map before anyone sees! ❞\n"+
+				"\n\t\t<< He hands you a folded, worn out piece of paper >> "+
+				"\n\t\t<< Map added to inventory >>"+
 				"\n["+this.name+"]:\n\t❝ It has all the locations and more importantly, I've managed to figure out all the camera positions, shown as 'C' ❞\n");
 		super.dialogs.add("\n["+this.name+"]:\n\t❝  We need to sneak out at night, but there's cams everywhere and you can't step out after the curfew. "
-				+ "\nLuckily, I have sources that tell me you can disable them from the Warden's computer in his office. \n"
-				+ "\nUnfortunately, the warden never leaves unless there's a huge fight like the one that happened last week in the Cafeteria. ❞\n");
+				+ "\n\tLuckily, I have sources that tell me you can disable them from the Warden's computer in his office. \n"
+				+ "\n\tUnfortunately, the warden never leaves unless there's a huge fight like the one that happened last week in the Cafeteria. ❞\n");
 		super.dialogs.add("\n["+this.name+"]:\n\t❝  The bars in your Cell window are worn out, but you will need some heavy duty tools to break them.❞\n");
 		super.dialogs.add("\n["+this.name+"]:\n\t❝  You should be able to figure out the rest on your own! ❞\n");
 		

@@ -35,7 +35,7 @@ public class Move implements Command {
 			curr.loc.enter();
 		}
 		else if(arg.toLowerCase().contains("south") && curr.loc.south != null){
-			if(curr.loc.south.isLocked) {System.out.println("\n<< " + curr.loc.name + " is locked! Do you have a key or something *better*? >>\n"); return;	}
+			if(curr.loc.south.isLocked) {System.out.println("\n\t<< " + curr.loc.name + " is locked! Do you have a key or something *better*? >>\n"); return;	}
 			curr.loc.prisoners.remove(player);
 			curr.loc = curr.loc.south;	
 			player.loc = curr.loc; 
