@@ -11,5 +11,5 @@ ESCAPE is a text-based adventure game where your goal is to break out of the mos
 ## Uses the JSON-simple external library (v1.1) for parsing sensor data
 When importing in eclipse, remember to edit build path to point to where you have your copy of json-simple jar file.
 
-#### Most files make use of unicode characters
+### Most files make use of unicode characters
 In eclipse, make sure to save files using UTF-8 encoding
